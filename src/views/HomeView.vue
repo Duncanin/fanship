@@ -1,13 +1,9 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    <h1>321</h1>
+  </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

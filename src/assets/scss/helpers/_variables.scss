@@ -317,7 +317,10 @@ $theme-colors: (
   'warning': $warning,
   'danger': $danger,
   'light': $light,
-  'dark': $dark 'primary-950': #431407,
+  'dark': $dark,
+
+  // added
+  'primary-950': #431407,
   'primary-900': #7c2d12,
   'primary-800': #9a3412,
   'primary-700': #c2410c,
@@ -328,7 +331,6 @@ $theme-colors: (
   'primary-200': #fed7aa,
   'primary-100': #ffedd5,
   'primary-50': #fff7ed,
-
   'secondary-950': #1b1b1bf2,
   'secondary-900': #1b1b1be5,
   'secondary-800': #454545,
@@ -341,7 +343,6 @@ $theme-colors: (
   'secondary-100': #e7e7e7,
   'secondary-50': #efefef,
   'secondary-0': #ffffff,
-
   'lemon-950': #401f08,
   'lemon-900': #6d3d16,
   'lemon-800': #804a13,
@@ -353,7 +354,6 @@ $theme-colors: (
   'lemon-200': #f8e46f,
   'lemon-100': #fcf6c5,
   'lemon-50': #fdfae9,
-
   'sage-950': #1f270c,
   'sage-900': #3d481f,
   'sage-800': #475420,
@@ -365,7 +365,6 @@ $theme-colors: (
   'sage-200': #d7e399,
   'sage-100': #eff3d4,
   'sage-50': #f8faeb,
-
   'red-950': #4b0e04,
   'red-900': #882514,
   'red-800': #a5250f,
@@ -377,7 +376,6 @@ $theme-colors: (
   'red-200': #ffcdc5,
   'red-100': #ffe4df,
   'red-50': #fff3f1,
-
   'green-950': #052e2b,
   'green-900': #154c46,
   'green-800': #135c53,
@@ -389,35 +387,11 @@ $theme-colors: (
   'green-200': #9cf3dd,
   'green-100': #cdfaed,
   'green-50': #f0fdf9,
-
-  'black-95': #1b1b1bf2,
-  'black-90': #1b1b1be5,
-  'black-80': #1b1b1bcc,
-  'black-70': #1b1b1bb2,
-  'black-60': #1b1b1b99,
-  'black-50': #1b1b1b80,
-  'black-40': #1b1b1b66,
-  'black-30': #1b1b1b4d,
-  'black-20': #1b1b1b33,
-  'black-10': #1b1b1b1a,
-  'black-5': #1b1b1b0d,
-
-  'white-95': #fffffff2,
-  'white-90': #ffffffe5,
-  'white-80': #ffffffcc,
-  'white-70': #ffffffb2,
-  'white-60': #ffffff99,
-  'white-50': #ffffff80,
-  'white-40': #ffffff66,
-  'white-30': #ffffff4d,
-  'white-20': #ffffff33,
-  'white-10': #ffffff1a,
-  'white-5': #ffffff0d,
-) !default;
+);
 // scss-docs-end theme-colors-map
 
 // scss-docs-start theme-text-variables
-$black-text-emphasis: shade-color($primary, 60%) !default;
+$primary-text-emphasis: shade-color($primary, 60%) !default;
 $secondary-text-emphasis: shade-color($secondary, 60%) !default;
 $success-text-emphasis: shade-color($success, 60%) !default;
 $info-text-emphasis: shade-color($info, 60%) !default;
@@ -694,7 +668,25 @@ $aspect-ratios: (
 
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
+// $font-family-sans-serif:
+//   system-ui,
+//   -apple-system,
+//   'Segoe UI',
+//   Roboto,
+//   'Helvetica Neue',
+//   'Noto Sans',
+//   'Liberation Sans',
+//   Arial,
+//   sans-serif,
+//   'Apple Color Emoji',
+//   'Segoe UI Emoji',
+//   'Segoe UI Symbol',
+//   'Noto Color Emoji' !default;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 $font-family-sans-serif:
+  'Noto Sans TC',
+  sans-serif,
   system-ui,
   -apple-system,
   'Segoe UI',
@@ -703,11 +695,11 @@ $font-family-sans-serif:
   'Noto Sans',
   'Liberation Sans',
   Arial,
-  sans-serif,
   'Apple Color Emoji',
   'Segoe UI Emoji',
   'Segoe UI Symbol',
   'Noto Color Emoji' !default;
+
 $font-family-monospace:
   SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;
 // stylelint-enable value-keyword-case
