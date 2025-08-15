@@ -17,25 +17,40 @@
   <h2>border-radius (rounded-)</h2>
   <div class="d-flex flex-wrap">
     <div
-      class="border d-inline-block bg-red-200 rounded-xxs m-1 shadow"
+      class="border d-inline-block bg-red-200 rounded-xxs m-1 shadow-light"
       style="width: 100px; height: 100px"
     >
-      <p>4 -xxs</p>
+      <p>4 -xxs <br />shadow-light</p>
     </div>
     <div
-      class="border d-inline-block bg-red-200 rounded-xs m-1"
+      class="border d-inline-block bg-red-200 rounded-xs m-1 shadow-dark"
       style="width: 100px; height: 100px"
     >
-      <p>8 -xs</p>
+      <p>8 -xs <br />shadow-dark</p>
     </div>
-    <div class="border d-inline-block bg-red-200 rounded-s m-1" style="width: 100px; height: 100px">
-      <p>12 -s</p>
+    <div
+      class="border d-inline-block bg-red-200 rounded-s m-1 shadow-glow"
+      style="width: 100px; height: 100px"
+    >
+      <p>12 -s <br />shadow-glow</p>
     </div>
-    <div class="border d-inline-block bg-red-200 rounded-m m-1" style="width: 100px; height: 100px">
-      <p>16 -m</p>
-    </div>
-    <div class="border d-inline-block bg-red-200 rounded-l m-1" style="width: 100px; height: 100px">
-      <p>20 -l</p>
+    <div class="w-50 border p-spac-2xl" style="background-color: var(--bs-gray-100)">
+      <!-- <div class="w-50 border p-spac-2xl bg-black"> -->
+      <div
+        class="d-inline-block bg-white rounded-m m-1 shadow-photo border-0"
+        style="width: 100px; height: 100px"
+      >
+        <p>16 -m shadow-photo</p>
+      </div>
+      <div
+        class="d-inline-block bg-white rounded-l m-1 shadow-background border-0"
+        style="width: 100px; height: 100px"
+      >
+        <p>
+          20 -l <br />
+          shadow-background
+        </p>
+      </div>
     </div>
     <div
       class="border d-inline-block bg-red-200 rounded-xl m-1"
