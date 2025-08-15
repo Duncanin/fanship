@@ -85,3 +85,27 @@ $utilities: map-merge(
       ),
   )
 );
+
+$utilities: map-merge(
+  $utilities,
+  (
+    'rounded': map-merge(
+        map-get($utilities, 'rounded'),
+        (
+          values: map-merge(
+              map-get(map-get($utilities, 'rounded'), 'values'),
+              (
+                xxs: 4px,
+                xs: 8px,
+                s: 12px,
+                m: 16px,
+                l: 20px,
+                xl:24px,
+                xxl:32px,
+                full:1000px,
+              )
+            ),
+        )
+      ),
+  )
+);
