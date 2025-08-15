@@ -1,4 +1,10 @@
 .bg-header {
   height: 154px;
-  
+  width: 100%;
+  & > div {
+    box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    border-bottom-right-radius: 1000px;
+    border-bottom-left-radius: 1000px;
+  }
 }
