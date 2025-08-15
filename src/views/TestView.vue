@@ -1,4 +1,5 @@
 <template>
+  <bg_header />
   <div class="d-flex">
     <div class="p-5 bg-black bg-opacity-10 text-black opacity-10">123</div>
     <div class="text-primary-900 bg-primary-950">primay</div>
@@ -83,4 +84,6 @@
   color: greenyellow;
 }
 </style>
-<script setup></script>
+<script setup>
+import bg_header from '../components/bg-header.vue'
+</script>
