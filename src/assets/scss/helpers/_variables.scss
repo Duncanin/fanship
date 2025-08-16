@@ -298,8 +298,11 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary: $blue !default;
-$secondary: $gray-600 !default;
+// $primary: $blue !default;
+$primary: #3d3d3d !default;
+// $secondary: $gray-600 !default;
+$secondary: $white !default;
+$brand: #fb923c !default;
 $success: $green !default;
 $info: $cyan !default;
 $warning: $yellow !default;
@@ -320,6 +323,7 @@ $theme-colors: (
   'dark': $dark,
 
   // added
+  'brand': $brand,
   'primary-950': #431407,
   'primary-900': #7c2d12,
   'primary-800': #9a3412,
@@ -600,13 +604,16 @@ $container-max-widths: (
 //
 // Set the number of columns and specify the width of the gutters.
 
-$grid-columns: 12 !default;
-$grid-gutter-width: 1.5rem !default;
+// $grid-columns: 12 !default;
+$grid-columns: 4 !default;
+// $grid-gutter-width: 1.5rem !default;
+$grid-gutter-width: 1rem !default;
 $grid-row-columns: 6 !default;
 
 // Container padding
 
-$container-padding-x: $grid-gutter-width !default;
+// $container-padding-x: $grid-gutter-width !default;
+$container-padding-x: $grid-gutter-width * 3 !default;
 
 // Components
 //
@@ -917,7 +924,8 @@ $input-btn-padding-x: map-get($spacers, spac-xl) !default;
 
 $input-btn-font-family: null !default;
 $input-btn-font-size: $font-size-base !default;
-$input-btn-line-height: $line-height-base !default;
+// $input-btn-line-height: $line-height-base !default; //1.5
+$input-btn-line-height: 1 !default; //1
 
 $input-btn-focus-width: $focus-ring-width !default;
 $input-btn-focus-color-opacity: $focus-ring-opacity !default;
@@ -933,7 +941,8 @@ $input-btn-padding-y-lg: 0.5rem !default;
 $input-btn-padding-x-lg: 1rem !default;
 $input-btn-font-size-lg: $font-size-lg !default;
 
-$input-btn-border-width: var(--#{$prefix}border-width) !default;
+// $input-btn-border-width: var(--#{$prefix}border-width) !default;
+$input-btn-border-width: 0 !default;
 // scss-docs-end input-btn-variables
 
 // Buttons
