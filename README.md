@@ -34,3 +34,14 @@ npm run build
 npm run lint
 ```
 # fanship
+
+
+## 新頁面撰寫步驟
+1. 新增vue檔
+    + src資料夾 -> views資料夾 -> 新增 "檔名.vue"
+2. 建立路徑
+    + 2-1. 開啟index.js
+        + src資料夾 -> router資料夾 -> index.js
+    + 2-2. 新增內容*2
+        + (插入vue檔案) import 來源
+        + (設定路徑) routes內新增資料 [ path + name + component ]
