@@ -5,7 +5,7 @@ import TestView from '../views/TestView.vue'
 import PairingResult from '../Views/PairingResult.vue'
 import PairingDetail from '../Views/PairingDetail.vue'
 import PairingWaiting from '../Views/PairingWaiting.vue'
-
+import PairingSuccess from '../Views/PairingSuccess.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +32,10 @@ const router = createRouter({
       path: '/PairingWaiting',
       name: 'PairingWaiting',
       component: PairingWaiting,
+    },{
+      path: '/PairingSuccess',
+      name: 'PairingSuccess',
+      component: PairingSuccess,
     }
   ],
 })
