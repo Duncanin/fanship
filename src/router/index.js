@@ -4,6 +4,8 @@ import HomeView from '../views/HomeView.vue'
 import TestView from '../views/TestView.vue'
 import PairingResult from '../Views/PairingResult.vue'
 import PairingDetail from '../Views/PairingDetail.vue'
+import PairingWaiting from '../Views/PairingWaiting.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +28,10 @@ const router = createRouter({
       path: '/PairingDetail',
       name: 'PairingDetail',
       component: PairingDetail,
+    },{
+      path: '/PairingWaiting',
+      name: 'PairingWaiting',
+      component: PairingWaiting,
     }
   ],
 })
