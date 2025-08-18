@@ -8,3 +8,61 @@
     border-bottom-left-radius: 1000px;
   }
 }
+
+.btn {
+  gap: 8px;
+  display: inline-flex;
+  justify-content: center;
+  box-shadow: none;
+  & > span {
+    vertical-align: baseline;
+  }
+}
+
+.btn-primary.btn-primary {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+
+  &:active,
+  &.active,
+  .btn-check:checked + & {
+    opacity: 0.8;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+  }
+}
+
+.btn-secondary.btn-secondary {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  &:active,
+  &.active,
+  .btn-check:checked + & {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    color: theme-color('secondary-950');
+    background: mix(map-get($theme-colors, 'secondary-950'), $white, 10%);
+  }
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    box-shadow: none;
+  }
+}
+
+.btn-brand,
+.btn-brand:hover {
+  color: $white;
+  background-color: $brand;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+
+  &:active,
+  &.active,
+  .btn-check:checked + & {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+    color: $white;
+    background: mix(#000, $brand, 10%);
+  }
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    background-color: theme-color('primary-200');
+    color: $white;
+  }
+}
