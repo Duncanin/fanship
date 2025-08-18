@@ -4,7 +4,7 @@
     <div class="recapSuccess">
       <h5>恭喜成為飯友 🎉</h5>
       <div class="pairImg">
-        <img src="../assets/img/m-pfp2.png" alt="他人" />
+        <img class="mb-0" src="../assets/img/m-pfp2.png" alt="他人" />
         <div class="connect">
           <img src="../assets/img/highfive.png" alt="擊掌火花" />
           <div class="connentHand">
@@ -13,7 +13,7 @@
           </div>
         </div>
 
-        <img src="../assets/img/user.png" alt="自己" />
+        <img class="mb-0" src="../assets/img/user.png" alt="自己" />
       </div>
       <img src="../assets/img/matching-success.gif" alt="成功動圖" />
     </div>
@@ -40,9 +40,7 @@
   justify-content: space-around;
   margin-bottom: 0;
 }
-.pairImg img {
-  margin-bottom: 0;
-}
+
 .connect {
   position: absolute;
   top: -40px;
