@@ -1031,12 +1031,16 @@ $form-label-color: null !default;
 // scss-docs-end form-label-variables
 
 // scss-docs-start form-input-variables
-$input-padding-y: $input-btn-padding-y !default;
-$input-padding-x: $input-btn-padding-x !default;
+// $input-padding-y: $input-btn-padding-y !default;
+$input-padding-y: 12px !default;
+// $input-padding-x: $input-btn-padding-x !default;
+$input-padding-x: 16px !default;
 $input-font-family: $input-btn-font-family !default;
-$input-font-size: $input-btn-font-size !default;
-$input-font-weight: $font-weight-base !default;
-$input-line-height: $input-btn-line-height !default;
+// $input-font-size: $input-btn-font-size !default;
+$input-font-size: 16px !default;
+$input-font-weight: $font-weight-base !default; // 500
+// $input-line-height: $input-btn-line-height !default; // 1.2
+$input-line-height: $line-height-base !default; // 1.5
 
 $input-padding-y-sm: $input-btn-padding-y-sm !default;
 $input-padding-x-sm: $input-btn-padding-x-sm !default;
@@ -1046,7 +1050,8 @@ $input-padding-y-lg: $input-btn-padding-y-lg !default;
 $input-padding-x-lg: $input-btn-padding-x-lg !default;
 $input-font-size-lg: $input-btn-font-size-lg !default;
 
-$input-bg: var(--#{$prefix}body-bg) !default;
+// $input-bg: var(--#{$prefix}body-bg) !default;
+$input-bg: var(--bs-secondary-50) !default;
 $input-disabled-color: null !default;
 $input-disabled-bg: var(--#{$prefix}secondary-bg) !default;
 $input-disabled-border-color: null !default;
@@ -1054,19 +1059,23 @@ $input-disabled-border-color: null !default;
 $input-color: var(--#{$prefix}body-color) !default;
 $input-border-color: var(--#{$prefix}border-color) !default;
 $input-border-width: $input-btn-border-width !default;
-$input-box-shadow: var(--#{$prefix}box-shadow-inset) !default;
+// $input-box-shadow: var(--#{$prefix}box-shadow-inset) !default;
+$input-box-shadow: none !default;
 
-$input-border-radius: var(--#{$prefix}border-radius) !default;
+// $input-border-radius: var(--#{$prefix}border-radius) !default;
+$input-border-radius: 24px !default;
 $input-border-radius-sm: var(--#{$prefix}border-radius-sm) !default;
 $input-border-radius-lg: var(--#{$prefix}border-radius-lg) !default;
 
 $input-focus-bg: $input-bg !default;
 $input-focus-border-color: tint-color($component-active-bg, 50%) !default;
 $input-focus-color: $input-color !default;
-$input-focus-width: $input-btn-focus-width !default;
+// $input-focus-width: $input-btn-focus-width !default;
+$input-focus-width: 0 !default;
 $input-focus-box-shadow: $input-btn-focus-box-shadow !default;
 
-$input-placeholder-color: var(--#{$prefix}secondary-color) !default;
+// $input-placeholder-color: var(--#{$prefix}secondary-color) !default;
+$input-placeholder-color: var(--#{$prefix}secondary-400) !default;
 $input-plaintext-color: var(--#{$prefix}body-color) !default;
 
 $input-height-border: calc(
