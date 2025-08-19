@@ -1,0 +1,27 @@
+<template>
+  <div class="bgColor">
+    <Header />
+    <div class="container">
+      <div class="">
+        <div>
+          <div class="rounded-pill mili-img shadow-light mt-spac-5xl mx-auto overflow-hidden w-50">
+            <img src="../assets/images/login/milli.png" alt="image" class="object-fit-cover" />
+          </div>
+
+          <div class="mx-auto w-50 mt-spac-m">
+            <img src="../assets/images/login/logo.svg" alt="logo" class="d-block w-100 h-auto" />
+          </div>
+          <h3 class="fs-5 text-center text-secondary-500 mb-0 mt-spac-m">聊出你的食物默契 ✨</h3>
+        </div>
+
+        <div class="register">
+          <button type="button" class="btn btn-primary w-100">登入</button>
+          <button type="button" class="btn btn-secondary w-100">註冊</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script setup>
+import Header from '../components/bg-header.vue'
+</script>
