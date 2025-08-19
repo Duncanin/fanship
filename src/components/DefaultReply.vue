@@ -68,9 +68,7 @@
         class="d-block"
         @click="onEmoji(e)"
       >
-        <span>
-          {{ e }}
-        </span>
+        {{ e }}
       </button>
     </div>
   </form>
