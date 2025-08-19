@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-column gap-spac-s">
+  <form class="d-flex flex-column gap-spac-s">
     <!-- text input -->
     <div class="position-relative">
       <label for="typeText" class="d-none"></label>
@@ -26,6 +26,7 @@
         </span> -->
       </button>
     </div>
+
     <!-- quit text reply -->
     <div class="btn-reply-group fs-text-md">
       <button
@@ -72,7 +73,7 @@
         </span>
       </button>
     </div>
-  </div>
+  </form>
 </template>
 
 <script setup>

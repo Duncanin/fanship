@@ -163,3 +163,7 @@
     color: var(--bs-secondary-400);
   }
 }
+
+form:has(input:not(:placeholder-shown)) button {
+  color: var(--bs-brand);
+}
