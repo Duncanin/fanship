@@ -60,8 +60,16 @@
 
     <!-- emojis -->
     <div class="emo-group">
-      <button v-for="(e, i) in emojis" :key="'e-' + i" type="button" class="" @click="onEmoji(e)">
-        {{ e }}
+      <button
+        v-for="(e, i) in emojis"
+        :key="'e-' + i"
+        type="button"
+        class="d-block"
+        @click="onEmoji(e)"
+      >
+        <span>
+          {{ e }}
+        </span>
       </button>
     </div>
   </div>
