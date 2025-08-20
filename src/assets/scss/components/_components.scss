@@ -8,8 +8,164 @@
     border-bottom-left-radius: 1000px;
   }
 }
+<<<<<<< HEAD
 .bg-gradient-home {
   background: 
   linear-gradient(180deg, #FFEDD5 10.1%, #FFFFFF 45%),
   linear-gradient(180deg, #FFFFFF 0%, #FFEDD5 100%);
 }
+=======
+
+.btn {
+  gap: 8px;
+  display: inline-flex;
+  justify-content: center;
+  box-shadow: none;
+  & > span {
+    vertical-align: baseline;
+  }
+}
+
+.btn-primary.btn-primary {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+
+  &:active,
+  &.active,
+  .btn-check:checked + & {
+    opacity: 0.8;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+  }
+}
+
+.btn-secondary.btn-secondary {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  &:active,
+  &.active,
+  .btn-check:checked + & {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    color: var(--bs-secondary-950);
+    background: mix(map-get($theme-colors, 'secondary-950'), $white, 10%);
+  }
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    box-shadow: none;
+  }
+}
+
+.btn-brand,
+.btn-brand:hover {
+  color: $white;
+  background-color: $brand;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+
+  &:active,
+  &.active,
+  .btn-check:checked + & {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+    color: $white;
+    background: mix(#000, $brand, 10%);
+  }
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    background-color: var(--bs-secondary-200);
+    color: $white;
+  }
+}
+.form-control {
+  padding-right: 56px;
+}
+
+.btn-submit {
+  &:active,
+  &.active,
+  .btn-check:checked + & {
+    color: var(--bs-secondary-900);
+  }
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    color: var(--bs-secondary-400);
+  }
+}
+
+.btn-reply-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  button span {
+    color: var(--bs-primary);
+  }
+}
+
+.text-emj {
+  height: 14px;
+  width: 20px;
+}
+
+.btn-reply {
+  appearance: none;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 0px;
+  border-radius: 1000px;
+  line-height: 20px;
+  &:active,
+  &.active,
+  .btn-check:checked + & {
+    background-color: var(--bs-secondary-300);
+  }
+}
+
+.emo-group {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
+.emo-group button {
+  appearance: none;
+  border: 0px;
+  border-radius: 1000px;
+  padding: 8px 12px;
+  font-size: 24px;
+  line-height: 1;
+
+  &:active,
+  &.active,
+  .btn-check:checked + & {
+    background-color: var(--bs-secondary-300);
+  }
+}
+
+.reload-quickReply {
+  padding: 0;
+  margin: 0;
+  border: none;
+  display: block;
+  width: 28px;
+  height: 28px;
+  appearance: none;
+  background: none;
+  color: var(--bs-primary);
+
+  &:active,
+  &.active,
+  .btn-check:checked + & {
+    color: var(--bs-secondary-300);
+    transform: rotate(120deg);
+  }
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    color: var(--bs-secondary-400);
+  }
+}
+
+form:has(input:not(:placeholder-shown)) button {
+  color: var(--bs-brand);
+}
+>>>>>>> main
