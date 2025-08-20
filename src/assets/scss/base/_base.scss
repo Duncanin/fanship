@@ -1,3 +1,16 @@
 body {
-  max-width: 375px;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+}
+*,*:before,*:after {
+	box-sizing: border-box;
+}
+a {
+	display: block;
+	text-decoration: none;
+}
+img {
+	max-width: 100%;
+	height: auto;
+  vertical-align: middle;
 }
