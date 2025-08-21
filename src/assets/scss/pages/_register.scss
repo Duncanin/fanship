@@ -1,0 +1,55 @@
+.registerBG {
+  background: linear-gradient(
+    to bottom,
+    var(--bs-primary-100) 0%,
+    var(--bs-primary-100) 20%,
+    var(--bs-white) 40%,
+    var(--bs-white) 60%,
+    var(--bs-primary-50) 75%,
+    var(--bs-primary-100) 95%,
+    var(--bs-primary-100) 100%
+  );
+  min-height: 100vh;
+
+  .mili-img img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+  .mili-img {
+    width: 80%;
+  }
+
+  .register {
+    display: flex;
+    flex-direction: column;
+    margin-top: 84px;
+    margin-bottom: auto;
+    gap: 12px;
+  }
+
+  .btn-sm {
+    font-size: 18px;
+  }
+
+  .btn-facebook,
+  .btn-facebook:hover {
+    color: $white;
+    background-color: $facebook;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+
+    &:active,
+    &.active,
+    .btn-check:checked + & {
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+      color: $white;
+      background: mix(#000, $facebook, 10%);
+    }
+    &:disabled,
+    &.disabled,
+    fieldset:disabled & {
+      background-color: var(--bs-secondary-200);
+      color: $white;
+    }
+  }
+}
