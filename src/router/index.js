@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import { createRouter, createWebHistory } from 'vue-router'
+
 // 1.插入vue檔案
 import HomeView from '../views/HomeView.vue'
 import TestView from '../views/TestView.vue'
