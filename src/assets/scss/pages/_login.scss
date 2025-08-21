@@ -1,0 +1,27 @@
+.loginBG {
+  background: linear-gradient(
+    to bottom,
+    var(--bs-primary-100) 0%,
+    var(--bs-primary-100) 20%,
+    var(--bs-white) 40%,
+    var(--bs-white) 60%,
+    var(--bs-primary-50) 75%,
+    var(--bs-primary-100) 95%,
+    var(--bs-primary-100) 100%
+  );
+  min-height: 100vh;
+
+  .mili-img img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+
+  .login {
+    display: flex;
+    flex-direction: column;
+    margin-top: 84px;
+    margin-bottom: auto;
+    gap: 12px;
+  }
+}
