@@ -1,3 +1,4 @@
+import { createRouter, createWebHashHistory } from 'vue-router'
 import { createRouter, createWebHistory } from 'vue-router'
 // 1.插入vue檔案
 import HomeView from '../views/HomeView.vue'
@@ -11,7 +12,7 @@ import PairingWaiting from '../Views/PairingWaiting.vue'
 import PairingSuccess from '../Views/PairingSuccess.vue'
 import ChatRoom from '../Views/ChatRoom.vue'
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     // 2.設定路徑
     {
