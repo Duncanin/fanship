@@ -9,11 +9,11 @@ import PairingIcon from '../views/PairingIcon.vue'
 import PairingFind from '../views/PairingFind.vue'
 import PairingSuggestion from '../views/PairingSuggestion.vue'
 import PairingGame from '../views/PairingGame.vue'
-import PairingResult from '../Views/PairingResult.vue'
-import PairingDetail from '../Views/PairingDetail.vue'
-import PairingWaiting from '../Views/PairingWaiting.vue'
-import PairingSuccess from '../Views/PairingSuccess.vue'
-import ChatRoom from '../Views/ChatRoom.vue'
+import PairingResult from '../views/PairingResult.vue'
+import PairingDetail from '../views/PairingDetail.vue'
+import PairingWaiting from '../views/PairingWaiting.vue'
+import PairingSuccess from '../views/PairingSuccess.vue'
+import ChatRoom from '../views/ChatRoom.vue'
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
