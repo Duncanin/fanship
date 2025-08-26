@@ -11,18 +11,70 @@
       <h5>你與<span>陽光宅男</span><br />完成了一場美食默契大挑戰！</h5>
       <div class="pairStar">
         <p>默契指數：</p>
-        <img src="../assets/img/star.svg" alt="star" />
-        <img src="../assets/img/star.svg" alt="star" />
-        <img src="../assets/img/star.svg" alt="star" />
-        <img src="../assets/img/star.svg" alt="star" />
-        <img src="../assets/img/star.svg" alt="star" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="#E7E7E7"
+          class="bi bi-star-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="#E7E7E7"
+          class="bi bi-star-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+          /></svg
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="#E7E7E7"
+          class="bi bi-star-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+          /></svg
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="#E7E7E7"
+          class="bi bi-star-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+          /></svg
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="#E7E7E7"
+          class="bi bi-star-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+          />
+        </svg>
       </div>
       <h6>默契發酵中，驚喜也在路上！🍀</h6>
       <p>不太一樣沒關係，總得有人負責驚喜吧？ <br />也許聊下去，就能長出意想不到的契合感！</p>
 
       <a class="linkInfo" href="#">查看對方的個人小卡</a>
     </div>
-    <a class="btnA pairingChat" href="PairingWaiting">繼續聊天</a>
+    <router-link to="/PairingWaiting" class="btnA pairingChat">繼續聊天</router-link>
     <a class="btnA pairingError" href="#">我們可能不適合做飯友</a>
   </div>
 </template>
@@ -84,10 +136,8 @@
   align-items: center;
   margin-bottom: 4px;
 }
-.pairStar img:hover {
-  /* 這邊待修改，填色問題 */
-  fill: yellow;
-  background-color: red;
+.pairStar svg:hover {
+  fill: #f6d74e;
 }
 .pairStar p {
   margin: 0;
@@ -102,11 +152,10 @@
   margin-top: 32px;
   margin-bottom: 66px;
 }
-.linkInfo:hover{
-    color:#FB923C;
-    border-bottom: 1px solid #FB923C;
+.linkInfo:hover {
+  color: #fb923c;
+  border-bottom: 1px solid #fb923c;
 }
-
 </style>
 
 

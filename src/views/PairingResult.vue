@@ -6,7 +6,7 @@
       <h5>你與<span>陽光宅男</span><br />完成了一場美食默契大挑戰！</h5>
       <p>點擊上方頭像解鎖對方照片！</p>
     </div>
-    <a class="btnA pairingChat" href="PairingDetail">繼續聊天</a>
+    <router-link to="/PairingDetail" class="btnA pairingChat">繼續聊天</router-link>
     <a class="btnA pairingError" href="#">我們可能不適合做飯友</a>
   </div>
 </template> 
