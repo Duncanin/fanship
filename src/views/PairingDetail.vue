@@ -1,11 +1,11 @@
 <template>
   <div class="bg-primary-50">
-    <bg_header class="" />
+    <bg_header />
     <div class="recapDetail">
       <div class="pairImg">
-        <img src="../assets/img/m-pfp2.png" alt="他人" />
-        <img class="pairConnect" src="../assets/img/resultSuccess.png" alt="icon" />
-        <img src="../assets/img/user.png" alt="自己" />
+        <img src="../assets/images/pairing_img/m-pfp2.png" alt="他人" />
+        <img class="pairConnect" src="../assets/images/pairing_img/resultSuccess.png" alt="icon" />
+        <img src="../assets/images/pairing_img/user.png" alt="自己" />
       </div>
 
       <h5>你與<span>陽光宅男</span><br />完成了一場美食默契大挑戰！</h5>
@@ -147,14 +147,15 @@
   color: #ea580c;
   font-size: 16px;
   font-weight: 500;
-  border-bottom: 1px solid#EA580C;
+  /* border-bottom: 1px solid#EA580C; */
   padding-bottom: 4px;
   margin-top: 32px;
   margin-bottom: 66px;
+
 }
 .linkInfo:hover {
   color: #fb923c;
-  border-bottom: 1px solid #fb923c;
+  /* border-bottom: 1px solid #fb923c; */
 }
 </style>
 
