@@ -3,21 +3,17 @@
     <bg_header class="" />
     <div class="recapSuccess">
       <h5>恭喜成為飯友 🎉</h5>
-      <div class="pairImg">
+      <div class="pairImgSuccess">
         <img class="mb-0" src="../assets/img/m-pfp2.png" alt="他人" />
         <div class="connect">
-          <img src="../assets/img/highfive.png" alt="擊掌火花" />
-          <div class="connentHand">
-            <img src="../assets/img/hand01.png" alt="左手" />
-            <img src="../assets/img/hand02.png" alt="右手" />
-          </div>
+          <img src="../assets/img/hands highfive.png" alt="擊掌火花" />
         </div>
 
         <img class="mb-0" src="../assets/img/user.png" alt="自己" />
       </div>
       <img src="../assets/img/matching-success.gif" alt="成功動圖" />
     </div>
-    <a class="btnA pairingChat" href="ChatRoom">前往聊天室</a>
+    <router-link to="/ChatRoom" class="btnA pairingChat">前往聊天室</router-link>
     <a class="btnA pairingError" href="#">返回首頁</a>
   </div>
 </template>
@@ -34,33 +30,38 @@
   border-radius: 32px;
   font-size: 20px;
 }
-.pairImg {
+
+.pairImgSuccess {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 36px 51px 0px 51px;
   position: relative;
-  margin-top: 36px;
-  justify-content: space-around;
-  margin-bottom: 0;
 }
 
-.connect {
-  position: absolute;
-  top: -40px;
-  left: 92px;
+.pairImgSuccess img {
+  border-radius: 1000px;
+  width: 84px;
+  height: 84px;
+  margin-bottom: 0px;
+  position: relative;
   z-index: 1;
 }
-.connect img {
-  width: 40px;
-  height: 46px;
-  margin: 0;
-  padding: 0;
+.pairImgSuccess .connect {
+  position: absolute;
+  z-index: 0;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.connentHand {
-  display: flex;
-}
-.connentHand img {
-  width: 20px;
-  height: 100%;
+.pairImgSuccess .connect img {
+  width: 120%;
+  height: 120%;
+ 
 }
 
+/* * {
+  outline: 1px solid pink;
+} */
 </style>
 
 <script setup>
