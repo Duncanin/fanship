@@ -1,17 +1,17 @@
 <template>
   <div class="bg-primary-50">
-    <bg_header class="" />
+    <bg_header />
     <div class="recapSuccess">
       <h5>恭喜成為飯友 🎉</h5>
       <div class="pairImgSuccess">
-        <img class="mb-0" src="../assets/img/m-pfp2.png" alt="他人" />
+        <img class="mb-0" src="../assets/images/pairing_img/m-pfp2.png" alt="他人" />
         <div class="connect">
-          <img src="../assets/img/hands highfive.png" alt="擊掌火花" />
+          <img src="../assets/images/pairing_img/hands highfive.png" alt="擊掌火花" />
         </div>
 
-        <img class="mb-0" src="../assets/img/user.png" alt="自己" />
+        <img class="mb-0" src="../assets/images/pairing_img/user.png" alt="自己" />
       </div>
-      <img src="../assets/img/matching-success.gif" alt="成功動圖" />
+      <img src="../assets/images/pairing_img/matching-success.gif" alt="成功動圖" />
     </div>
     <router-link to="/ChatRoom" class="btnA pairingChat">前往聊天室</router-link>
     <a class="btnA pairingError" href="#">返回首頁</a>
@@ -54,8 +54,8 @@
   transform: translate(-50%, -50%);
 }
 .pairImgSuccess .connect img {
-  width: 120%;
-  height: 120%;
+  width: 50%;
+  height: 80%;
  
 }
 
