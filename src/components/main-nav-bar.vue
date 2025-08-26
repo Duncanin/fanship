@@ -6,8 +6,13 @@
         @click="setActive(0)">
         <div class="nav_icon_wrapper">
           <div class="icon icon-chat">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#ffedd5" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
-              <path d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 16 16">
+              
+              <path fill="#ffedd5" d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7"/>
+              
+              <circle fill="#454545" cx="4" cy="8" r="1"/>
+              <circle fill="#454545" cx="8" cy="8" r="1"/>
+              <circle fill="#454545" cx="12" cy="8" r="1"/>
             </svg>
           </div>
         </div>
@@ -17,7 +22,7 @@
         @click="setActive(1)">
         <div class="nav_icon_wrapper">
           <div class="icon">
-            <img class="rounded-circle" src="/images/navigationBtn/milli.png" alt="milli">
+            <img :src="milliImg" alt="milli" class="rounded-circle">
           </div>
         </div>
       </li>
@@ -41,11 +46,10 @@
 
 <script setup>
 import { ref } from 'vue'
+import milliImg from '@/assets/images/navigationBtn/milli.png';
 
-// 使用響應式數據來追蹤當前活躍的項目
 const activeIndex = ref(1)
 
-// 設置活躍項目的函數
 function setActive(index) {
   activeIndex.value = index
 }

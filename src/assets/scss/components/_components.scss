@@ -8,14 +8,6 @@
     border-bottom-left-radius: 1000px;
   }
 }
-<<<<<<< HEAD
-.bg-gradient-home {
-  background: 
-  linear-gradient(180deg, #FFEDD5 10.1%, #FFFFFF 45%),
-  linear-gradient(180deg, #FFFFFF 0%, #FFEDD5 100%);
-}
-=======
-
 .btn {
   gap: 8px;
   display: inline-flex;
@@ -168,4 +160,3 @@
 form:has(input:not(:placeholder-shown)) button {
   color: var(--bs-brand);
 }
->>>>>>> main
