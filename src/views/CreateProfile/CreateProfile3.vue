@@ -173,20 +173,20 @@ const isFormValid = computed(
 const router = useRouter()
 function onNext() {
   if (!isFormValid.value) return
-  router.push('/create-profile-4')
+  router.push('/createProfile-4')
 }
 function onSkip() {
-  router.push('/create-profile-4')
+  router.push('/createProfile-4')
 }
 </script>
 
 <template>
-  <Header />
+  <Header class="sticky-top" />
 
   <div class="container">
     <div class="py-spac-l d-flex flex-column gap-spac-m profile2">
       <!-- 進度條 -->
-      <div class="progress mb-4 bg-primary-100" style="height: 12px">
+      <div class="progress bg-primary-100" style="height: 12px">
         <div
           class="progress-bar bg-primary-300 w-75"
           role="progressbar"
@@ -197,7 +197,7 @@ function onSkip() {
       </div>
 
       <h2
-        class="fs-5 d-flex justify-content-between align-items-center py-spac-s border-bottom border-secondary-950 border-opacity-10"
+        class="fs-5 d-flex justify-content-between align-items-center py-spac-s border-bottom border-secondary-950 border-opacity-10 m-0"
       >
         其他趣味標籤
       </h2>
@@ -218,7 +218,7 @@ function onSkip() {
         >
           生活風格
           <span
-            class="py-1 px-2 fw-medium fs-text-md rounded-3 border border-secondary-950 border-opacity-10 bg-white text-secondary-700 ms-auto"
+            class="py-1 px-2 fw-medium fs-text-md rounded-3 border border-secondary-950 border-opacity-10 bg-white text-secondary-700 ms-auto lh-base"
             >最多選擇 {{ MAX }} 項</span
           >
         </h3>
@@ -234,7 +234,7 @@ function onSkip() {
               @change="toggleLife(opt)"
             />
             <label
-              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md"
+              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md lh-base"
               :class="selectedLifeStyles.includes(opt) ? 'btn-secondary-800 text-white' : ''"
               :for="`life-${opt}`"
               >{{ opt }}</label
@@ -250,7 +250,7 @@ function onSkip() {
         >
           穿搭
           <span
-            class="py-1 px-2 fw-medium fs-text-md rounded-3 border border-secondary-950 border-opacity-10 bg-white text-secondary-700 ms-auto"
+            class="py-1 px-2 fw-medium fs-text-md rounded-3 border border-secondary-950 border-opacity-10 bg-white text-secondary-700 ms-auto lh-base"
             >最多選擇 {{ MAX }} 項</span
           >
         </h3>
@@ -266,7 +266,7 @@ function onSkip() {
               @change="toggleWear(opt)"
             />
             <label
-              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md"
+              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md lh-base"
               :class="selectedWearings.includes(opt) ? 'btn-secondary-800 text-white' : ''"
               :for="`wear-${opt}`"
               >{{ opt }}</label
@@ -282,7 +282,7 @@ function onSkip() {
         >
           旅遊
           <span
-            class="py-1 px-2 fw-medium fs-text-md rounded-3 border border-secondary-950 border-opacity-10 bg-white text-secondary-700 ms-auto"
+            class="py-1 px-2 fw-medium fs-text-md rounded-3 border border-secondary-950 border-opacity-10 bg-white text-secondary-700 ms-auto lh-base"
             >最多選擇 {{ MAX }} 項</span
           >
         </h3>
@@ -298,7 +298,7 @@ function onSkip() {
               @change="toggleTrip(opt)"
             />
             <label
-              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md"
+              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md lh-base"
               :class="selectedTrips.includes(opt) ? 'btn-secondary-800 text-white' : ''"
               :for="`trip-${opt}`"
               >{{ opt }}</label
@@ -314,7 +314,7 @@ function onSkip() {
         >
           寵物
           <span
-            class="py-1 px-2 fw-medium fs-text-md rounded-3 border border-secondary-950 border-opacity-10 bg-white text-secondary-700 ms-auto"
+            class="py-1 px-2 fw-medium fs-text-md rounded-3 border border-secondary-950 border-opacity-10 bg-white text-secondary-700 ms-auto lh-base"
             >最多選擇 {{ MAX }} 項</span
           >
         </h3>
@@ -330,7 +330,7 @@ function onSkip() {
               @change="togglePet(opt)"
             />
             <label
-              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md"
+              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md lh-base"
               :class="selectedPets.includes(opt) ? 'btn-secondary-800 text-white' : ''"
               :for="`pet-${opt}`"
               >{{ opt }}</label
@@ -346,7 +346,7 @@ function onSkip() {
         >
           電影
           <span
-            class="py-1 px-2 fw-medium fs-text-md rounded-3 border border-secondary-950 border-opacity-10 bg-white text-secondary-700 ms-auto"
+            class="py-1 px-2 fw-medium fs-text-md rounded-3 border border-secondary-950 border-opacity-10 bg-white text-secondary-700 ms-auto lh-base"
             >最多選擇 {{ MAX }} 項</span
           >
         </h3>
@@ -362,7 +362,7 @@ function onSkip() {
               @change="toggleMovie(opt)"
             />
             <label
-              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md"
+              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md lh-base"
               :class="selectedMovies.includes(opt) ? 'btn-secondary-800 text-white' : ''"
               :for="`movie-${opt}`"
               >{{ opt }}</label
@@ -394,7 +394,7 @@ function onSkip() {
               @change="toggleExh(opt)"
             />
             <label
-              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md"
+              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md lh-base"
               :class="selectedExhibitions.includes(opt) ? 'btn-secondary-800 text-white' : ''"
               :for="`exh-${opt}`"
               >{{ opt }}</label
@@ -426,7 +426,7 @@ function onSkip() {
               @change="toggleAnime(opt)"
             />
             <label
-              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md"
+              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md lh-base"
               :class="selectedAnime.includes(opt) ? 'btn-secondary-800 text-white' : ''"
               :for="`anime-${opt}`"
               >{{ opt }}</label
@@ -458,7 +458,7 @@ function onSkip() {
               @change="toggleLang(opt)"
             />
             <label
-              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md"
+              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md lh-base"
               :class="selectedLanguages.includes(opt) ? 'btn-secondary-800 text-white' : ''"
               :for="`lang-${opt}`"
               >{{ opt }}</label

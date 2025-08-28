@@ -39,12 +39,11 @@ function onSubmit() {
 </script>
 
 <template>
-  <Header />
-
+  <Header class="" />
   <div class="container">
     <div class="py-spac-l d-flex flex-column gap-spac-m">
       <!-- 進度條 -->
-      <div class="progress mb-4 bg-primary-100" style="height: 12px">
+      <div class="progress bg-primary-100" style="height: 12px">
         <div
           class="progress-bar bg-primary-300 w-25"
           role="progressbar"
@@ -55,22 +54,22 @@ function onSubmit() {
       </div>
 
       <h2
-        class="fs-5 d-flex justify-content-between align-items-center py-spac-s border-bottom border-secondary-950 border-opacity-10"
+        class="fs-5 d-flex justify-content-between align-items-center py-spac-s border-bottom border-secondary-950 border-opacity-10 m-0"
       >
         個人基本資料
         <span
-          class="py-1 px-2 fw-medium fs-text-md rounded-3 border border-secondary-950 border-opacity-10 bg-white text-secondary-700 ms-auto"
+          class="py-1 px-2 fw-medium fs-text-md rounded-3 border border-secondary-950 border-opacity-10 bg-white text-secondary-700 ms-auto lh-base"
           >必填</span
         >
       </h2>
 
       <form novalidate @submit.prevent="onSubmit">
         <!-- 暱稱 -->
-        <div class="mb-3">
-          <label class="form-label">暱稱</label>
+        <div class="">
+          <label class="form-label ms-2">暱稱</label>
           <input
             type="text"
-            class="form-control rounded-pill"
+            class="form-control rounded-pill py-2"
             :class="{ 'is-invalid': nickname && !isNicknameValid }"
             :maxlength="NICK_MAX"
             placeholder="輸入項目"
@@ -84,8 +83,8 @@ function onSubmit() {
 
         <!-- 性別 -->
         <div class="mb-3">
-          <label class="form-label">性別</label>
-          <select class="form-select rounded-pill" v-model="gender">
+          <label class="form-label ms-2">性別</label>
+          <select class="form-select rounded-pill py-2" v-model="gender">
             <option value="" class="d-none" disabled>請選擇性別</option>
             <option value="female">女</option>
             <option value="male">男</option>
@@ -95,10 +94,10 @@ function onSubmit() {
 
         <!-- 生日 -->
         <div class="mb-3">
-          <label class="form-label">生日</label>
+          <label class="form-label ms-2">生日</label>
           <input
             type="date"
-            class="form-control rounded-pill pe-spac-m"
+            class="form-control rounded-pill pe-spac-m py-2"
             v-model="birthday"
             placeholder="請選擇生日"
           />
@@ -106,8 +105,8 @@ function onSubmit() {
 
         <!-- 地區 -->
         <div class="mb-4">
-          <label class="form-label">地區</label>
-          <select class="form-select rounded-pill" v-model="region">
+          <label class="form-label ms-2">地區</label>
+          <select class="form-select rounded-pill py-2" v-model="region">
             <option value="" disabled>請選擇地區</option>
             <option value="TaipeiCounty">台北市</option>
             <option value="NewTaipei">新北市</option>

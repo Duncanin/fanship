@@ -98,12 +98,12 @@ function onSkip() {
 </script>
 
 <template>
-  <Header />
+  <Header class="sticky-top" />
 
   <div class="container">
     <div class="py-spac-l d-flex flex-column gap-spac-m profile2">
       <!-- 進度條 -->
-      <div class="progress mb-4 bg-primary-100" style="height: 12px">
+      <div class="progress bg-primary-100" style="height: 12px">
         <div
           class="progress-bar bg-primary-300 w-50"
           role="progressbar"
@@ -114,7 +114,7 @@ function onSkip() {
       </div>
 
       <h2
-        class="fs-5 d-flex justify-content-between align-items-center py-spac-s border-bottom border-secondary-950 border-opacity-10"
+        class="fs-5 d-flex justify-content-between align-items-center py-spac-s border-bottom border-secondary-950 border-opacity-10 m-0"
       >
         選擇你的美食標籤
       </h2>
@@ -134,7 +134,7 @@ function onSkip() {
         >
           你的料理偏好
           <span
-            class="py-1 px-2 fw-medium fs-text-md rounded-3 border border-secondary-950 border-opacity-10 bg-white text-secondary-700 ms-auto"
+            class="py-1 px-2 fw-medium fs-text-md rounded-3 border border-secondary-950 border-opacity-10 bg-white text-secondary-700 ms-auto lh-base"
             >最多選擇 {{ MAX }} 項</span
           >
         </h3>
@@ -151,7 +151,7 @@ function onSkip() {
               @change="toggleCuisine(opt)"
             />
             <label
-              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md"
+              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md lh-base"
               :class="selectedCuisines.includes(opt) ? 'btn-secondary-800 text-white' : ''"
               :for="`cuisine-${opt}`"
               >{{ opt }}</label
@@ -166,7 +166,7 @@ function onSkip() {
         >
           你的飲食人格
           <span
-            class="py-1 px-2 fw-medium fs-text-md rounded-3 border border-secondary-950 border-opacity-10 bg-white text-secondary-700 ms-auto"
+            class="py-1 px-2 fw-medium fs-text-md rounded-3 border border-secondary-950 border-opacity-10 bg-white text-secondary-700 ms-auto lh-base"
             >最多選擇 {{ MAX }} 項</span
           >
         </h3>
@@ -183,7 +183,7 @@ function onSkip() {
               @change="toggleFeature(opt)"
             />
             <label
-              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md"
+              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md lh-base"
               :class="selectedFeatures.includes(opt) ? 'btn-secondary-800 text-white' : ''"
               :for="`feature-${opt}`"
               >{{ opt }}</label
@@ -198,7 +198,7 @@ function onSkip() {
         >
           你的烹飪技能
           <span
-            class="py-1 px-2 fw-medium fs-text-md rounded-3 border border-secondary-950 border-opacity-10 bg-white text-secondary-700 ms-auto"
+            class="py-1 px-2 fw-medium fs-text-md rounded-3 border border-secondary-950 border-opacity-10 bg-white text-secondary-700 ms-auto lh-base"
             >最多選擇 {{ MAX }} 項</span
           >
         </h3>
@@ -215,7 +215,7 @@ function onSkip() {
               @change="toggleSkill(opt)"
             />
             <label
-              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md"
+              class="btn btn-tag rounded-pill border-secondary-950 border-1 fw-medium fs-text-md lh-base"
               :class="selectedSkills.includes(opt) ? 'btn-secondary-800 text-white' : ''"
               :for="`skill-${opt}`"
               >{{ opt }}</label

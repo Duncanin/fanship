@@ -6,6 +6,8 @@ import RegisterView from '../views/RegisterView.vue'
 import CreateProfile from '../views/CreateProfile/CreateProfile.vue'
 import CreateProfile2 from '../views/CreateProfile/CreateProfile2.vue'
 import CreateProfile3 from '../views/CreateProfile/CreateProfile3.vue'
+import CreateProfile4 from '../views/CreateProfile/CreateProfile4.vue'
+import CreateProfile5 from '../views/CreateProfile/CreateProfile5.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -44,6 +46,16 @@ const router = createRouter({
       path: '/createProfile-3',
       name: 'CreateProfile3',
       component: CreateProfile3,
+    },
+    {
+      path: '/createProfile-4',
+      name: 'CreateProfile4',
+      component: CreateProfile4,
+    },
+    {
+      path: '/createProfile-5',
+      name: 'CreateProfile5',
+      component: CreateProfile5,
     },
   ],
 })
