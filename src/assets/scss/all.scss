@@ -13,8 +13,9 @@
 @import 'bootstrap/scss/utilities/api';
 
 //componets
+@import './page/pairing';
 
 @import './pages/register';
 @import './pages/login';
 
-@import './pages/createProfile';
+@import './page/pairing';

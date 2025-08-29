@@ -1,6 +1,22 @@
 body {
   min-height: 100vh;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
 }
-// * {
-//   outline: 1px solid red;
-// }
+*,*:before,*:after {
+	box-sizing: border-box;
+}
+a {
+	display: block;
+	text-decoration: none;
+}
+img {
+	max-width: 100%;
+	height: auto;
+  vertical-align: middle;
+}
+.bg-gradient-home {
+  background:
+  linear-gradient(180deg, #FFEDD5 10.1%, #FFFFFF 45%),
+  linear-gradient(180deg, #FFFFFF 0%, #FFEDD5 100%);
+}
