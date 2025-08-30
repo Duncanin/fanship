@@ -19,7 +19,8 @@ import CreateProfile2 from '../views/CreateProfile/CreateProfile2.vue'
 import CreateProfile3 from '../views/CreateProfile/CreateProfile3.vue'
 import CreateProfile4 from '../views/CreateProfile/CreateProfile4.vue'
 import CreateProfile5 from '../views/CreateProfile/CreateProfile5.vue'
-
+import myProfile from '../views/CreateProfile/myProfile.vue'
+import editProfile from '../views/CreateProfile/editProfile.vue'
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
@@ -118,6 +119,16 @@ const router = createRouter({
       path: '/createProfile-5',
       name: 'CreateProfile5',
       component: CreateProfile5,
+    },
+    {
+      path: '/myProfile',
+      name: 'myProfile',
+      component: myProfile,
+    },
+    {
+      path: '/editProfile',
+      name: 'editProfile',
+      component: editProfile,
     },
   ],
 })
