@@ -1,7 +1,9 @@
 <script setup>
 import { useRouter } from 'vue-router'
 
-const defaultAvatar = './src/assets/images/login/milli.png'
+import milliImg from '@/assets/images/login/milli.png'
+
+const defaultAvatar = milliImg
 const router = useRouter()
 function onParing() {
   router.push('/pairing-index')
