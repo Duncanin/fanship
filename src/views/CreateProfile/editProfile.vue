@@ -1129,7 +1129,7 @@ svg.shadow-icon {
   }
   span svg {
     position: absolute;
-    left: 30px;
+    left: 25px;
     top: 40px;
   }
 }
