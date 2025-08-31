@@ -6,6 +6,7 @@
       <img src="../assets/images/pairing_img/result-waiting.gif" alt="" />
     </div>
     <router-link to="/PairingSuccess" class="btnA pairingChat">繼續聊天</router-link>
+
     <a class="btnA pairingError" href="#">我們可能不適合做飯友</a>
   </div>
 </template>
