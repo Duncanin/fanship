@@ -1,19 +1,12 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import milliImg from '@/assets/images/navigationBtn/milli.png'
 
 const activeIndex = ref(1)
-function setActive(i) {
-  activeIndex.value = i
+
+function setActive(index) {
+  activeIndex.value = index
 }
-
-const centers = ['20%', '50%', '79%']
-
-const notchStyle = computed(() => ({
-  '--notch-x': centers[activeIndex.value],
-  '--notch-r': '45px',
-  '--notch-lift': '38px',
-}))
 </script>
 
 <template>
@@ -362,71 +355,78 @@ const notchStyle = computed(() => ({
         </div>
       </div>
 
-      <!-- <MainNavBar /> -->
-      <div class="main-nav_bar bg-secondary-800 rounded-pill mt-spac-xl" :style="notchStyle">
-        <div class="notch-layer"></div>
-        <ul class="d-flex justify-content-between align-items-center py-spac-xs px-spac-5xl">
-          <li class="nav_bar_item" :class="{ active: activeIndex === 0 }" @click="setActive(0)">
-            <div class="nav_icon_wrapper">
-              <div class="icon icon-chat">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 16 16"
-                  :class="{ 'shadow-icon': activeIndex === 0 }"
-                >
-                  <path
-                    fill="#ffedd5"
-                    d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7"
-                  />
+      <div class="row mt-spac-xl">
+        <div class="col-12 d-flex flex-column justify-content-center align-items-center">
+          <!-- <MainNavBar /> -->
+          <div class="main-nav_bar bg-secondary-800 rounded-pill">
+            <ul class="d-flex justify-content-between align-items-center py-spac-xs px-spac-5xl">
+              <li class="nav_bar_item" :class="{ active: activeIndex === 0 }" @click="setActive(0)">
+                <div class="nav_icon_wrapper">
+                  <div class="icon icon-chat">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 16 16"
+                      :class="{ 'shadow-icon': activeIndex === 0 }"
+                    >
+                      <path
+                        fill="#ffedd5"
+                        d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7"
+                      />
 
-                  <circle fill="#454545" cx="4" cy="8" r="1" />
-                  <circle fill="#454545" cx="8" cy="8" r="1" />
-                  <circle fill="#454545" cx="12" cy="8" r="1" />
-                </svg>
-              </div>
-            </div>
-          </li>
-          <li
-            class="nav_bar_item milli-w-cus mx-spac-4xl"
-            :class="{ active: activeIndex === 1 }"
-            @click="setActive(1)"
-          >
-            <div class="nav_icon_wrapper">
-              <div class="icon">
-                <img
-                  :src="milliImg"
-                  alt="milli"
-                  class="rounded-circle"
-                  :class="{ 'shadow-icon': activeIndex === 1 }"
-                />
-              </div>
-            </div>
-          </li>
-          <li class="nav_bar_item" :class="{ active: activeIndex === 2 }" @click="setActive(2)">
-            <div class="nav_icon_wrapper">
-              <div
-                class="icon icon-text d-flex flex-column"
-                :class="{ 'shadow-icon': activeIndex === 2 }"
+                      <circle fill="#454545" cx="4" cy="8" r="1" />
+                      <circle fill="#454545" cx="8" cy="8" r="1" />
+                      <circle fill="#454545" cx="12" cy="8" r="1" />
+                    </svg>
+                  </div>
+                </div>
+              </li>
+              <li
+                class="nav_bar_item milli-w-cus mx-spac-4xl"
+                :class="{ active: activeIndex === 1 }"
+                @click="setActive(1)"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  fill="#ffedd5"
-                  class="bi bi-person-fill"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
-                  />
-                </svg>
-                <span class="fs-text-xs text-nowrap m-0 text-primary-100">我的小卡</span>
-              </div>
-            </div>
-          </li>
-        </ul>
+                <div class="nav_icon_wrapper">
+                  <div class="icon">
+                    <img
+                      :src="milliImg"
+                      alt="milli"
+                      class="rounded-circle"
+                      :class="{ 'shadow-icon': activeIndex === 1 }"
+                    />
+                  </div>
+                </div>
+              </li>
+              <li class="nav_bar_item" :class="{ active: activeIndex === 2 }" @click="setActive(2)">
+                <div class="nav_icon_wrapper">
+                  <div
+                    class="icon icon-text d-flex flex-column"
+                    :class="{ 'shadow-icon': activeIndex === 2 }"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      fill="#ffedd5"
+                      class="bi bi-person-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+                      />
+                    </svg>
+                    <span class="fs-text-xs text-nowrap m-0 text-primary-100">我的小卡</span>
+                  </div>
+                </div>
+              </li>
+              <div
+                class="bgHalfGroove"
+                :style="{ transform: `translateX(calc(80px * ${activeIndex}))` }"
+              ></div>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -439,7 +439,6 @@ li {
   margin: 0;
   padding: 0;
 }
-/* Add color and fill for active icons/text */
 .nav_bar_item.active .icon,
 .nav_bar_item.active .icon svg path,
 .nav_bar_item.active .icon img,
@@ -480,10 +479,10 @@ li {
 }
 .nav_bar_item.active .nav_icon_wrapper .icon svg,
 .nav_bar_item.active .nav_icon_wrapper .icon img {
-  transform: translateY(-28px) scale(1.6);
+  transform: translateY(-32px) scale(1.6);
 }
 .nav_bar_item.active .nav_icon_wrapper .icon span {
-  transform: translateY(-22px);
+  transform: translateY(-22px) scale(1.3);
 }
 
 .nav_bar_item .icon {
@@ -496,58 +495,39 @@ li {
 .shadow-icon {
   filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.16)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
-
-svg.shadow-icon {
-  background: transparent;
-}
-
-.main-nav_bar {
-  position: relative;
-  overflow: visible;
-  isolation: isolate;
-  background: transparent !important;
-}
-
-.main-nav_bar {
-  position: relative;
-  overflow: visible;
-  isolation: isolate;
-  background: transparent !important;
-  --notch-x: 50%;
-  --notch-r: 30px;
-  --notch-lift: 60px;
-  --notch-ry: 80px;
-}
-
-.notch-layer {
+.bgHalfGroove {
   position: absolute;
-  inset: 0;
-  background: var(--bs-secondary-800);
-  border-radius: 9999px;
-
-  -webkit-mask: radial-gradient(
-    ellipse var(--notch-r) var(--notch-ry) at var(--notch-x) calc(0px - var(--notch-lift)),
-    transparent 99%,
-    #000 100%
-  );
-  mask: radial-gradient(
-    ellipse var(--notch-r) var(--notch-ry) at var(--notch-x) calc(0px - var(--notch-lift)),
-    transparent 99%,
-    #000 100%
-  );
-
-  box-shadow: inset 0 14px 28px rgba(0, 0, 0, 0.18);
-  pointer-events: none;
-  z-index: 0;
+  top: -55%;
+  left: 9%;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent 30%, #fff7ed 30%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
 }
-
-.main-nav_bar > ul {
-  position: relative;
-  z-index: 1;
+.bgHalfGroove::before {
+  content: '';
+  position: absolute;
+  top: 43%;
+  left: -31px;
+  width: 35px;
+  height: 30px;
+  background: transparent;
+  border-top-right-radius: 30px;
+  box-shadow: 1px -12px 0 #fff7ed;
 }
-
-.nav_icon_wrapper {
-  position: relative;
-  z-index: 1;
+.bgHalfGroove::after {
+  content: '';
+  position: absolute;
+  top: 43%;
+  right: -31px;
+  width: 35px;
+  height: 30px;
+  background: transparent;
+  border-top-left-radius: 30px;
+  box-shadow: -1px -12px 0 #fff7ed;
 }
 </style>
