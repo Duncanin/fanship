@@ -9,6 +9,13 @@
 
 <body>
   <div id="app"></div>
+  <script>
+    (function () {
+      if (location.hash === '' || location.hash === '#/') {
+        location.replace(location.origin + location.pathname + '#/login');
+      }
+    })();
+  </script>
   <script type="module" src="/src/main.js"></script>
 </body>
 
