@@ -16,7 +16,11 @@
 
         <div class="register">
           <!-- google register -->
-          <button type="button" class="btn btn-secondary btn-sm fw-medium w-100">
+          <router-link
+            to="/CreateProfile"
+            type="button"
+            class="btn btn-secondary btn-sm fw-medium w-100"
+          >
             <svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -46,9 +50,13 @@
               <path fill="none" d="M0 0h48v48H0z"></path>
             </svg>
             使用 Google 帳戶註冊
-          </button>
+          </router-link>
           <!-- fb register -->
-          <button type="button" class="btn btn-facebook btn-sm fw-medium w-100">
+          <router-link
+            to="/CreateProfile"
+            type="button"
+            class="btn btn-facebook btn-sm fw-medium w-100"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -62,9 +70,13 @@
               />
             </svg>
             使用 Facebook 帳戶註冊
-          </button>
+          </router-link>
           <!-- apple register -->
-          <button type="button" class="btn btn-primary bg-dark btn-sm fw-medium w-100">
+          <router-link
+            to="/CreateProfile"
+            type="button"
+            class="btn btn-primary bg-dark btn-sm fw-medium w-100"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -81,7 +93,7 @@
               />
             </svg>
             使用 Apple 帳戶註冊
-          </button>
+          </router-link>
         </div>
       </div>
     </div>

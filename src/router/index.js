@@ -1,6 +1,4 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-// 1.插入vue檔案
-import HomeView from '../views/HomeView.vue'
 import TestView from '../views/TestView.vue'
 import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
@@ -24,11 +22,9 @@ import editProfile from '../views/CreateProfile/editProfile.vue'
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
-    // 2.設定路徑
     {
       path: '/',
-      name: 'home',
-      component: HomeView,
+      redirect: '/login',
     },
     {
       path: '/test',
