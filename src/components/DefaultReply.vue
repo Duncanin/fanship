@@ -37,7 +37,7 @@
         @click="pick(c)"
       >
         <span class="text-emj">{{ c.emoji }}</span>
-        <span class="fw-medium">{{ c.text }}</span>
+        <span class="fw-medium text-nowrap">{{ c.text }}</span>
       </button>
       <button
         type="button"
