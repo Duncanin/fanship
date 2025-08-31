@@ -1,17 +1,16 @@
 <template>
   <div class="bg-primary-50">
-    <bg_header class="" />
+    <bg_header />
     <div class="recapWaiting">
       <h5>等待飯友回應中⋯</h5>
-      <img src="../assets/img/result-waiting.gif" alt="">
+      <img src="../assets/images/pairing_img/result-waiting.gif" alt="" />
     </div>
+    <router-link to="/PairingSuccess" class="btnA pairingChat">繼續聊天</router-link>
 
-    <a class="btnA pairingChat" href="PairingSuccess">繼續聊天</a>
     <a class="btnA pairingError" href="#">我們可能不適合做飯友</a>
   </div>
 </template>
 <style>
-
 .recapWaiting {
   padding-top: 101px;
   padding-bottom: 101px;
@@ -24,14 +23,13 @@
   border-radius: 32px;
   font-size: 20px;
 }
-.recapWaiting h5{
-    margin-bottom: 44px;
+.recapWaiting h5 {
+  margin-bottom: 44px;
 }
-.recapWaiting img{
-    width: 208px;
-    height: 208px;
+.recapWaiting img {
+  width: 208px;
+  height: 208px;
 }
-
 </style>
 
 <script setup>

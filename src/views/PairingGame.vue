@@ -38,7 +38,7 @@
             >
               <button
                 type="button"
-                class="answer-btn d-flex justify-content-center align-items-center px-spac-xs"
+                class="answer-btn"
                 :class="{
                   'selected': userChoice === index,
                   'disabled': hasAnswered || remainingTime === 0
@@ -46,12 +46,12 @@
                 :disabled="hasAnswered || remainingTime === 0"
                 @click="selectAnswer(index)"
               >
-                <!-- 左邊對方模擬答案 -->
+                <!-- 左邊對方模擬答案 - 絕對定位 -->
                 <img 
                   v-if="opponentChoice === index && hasAnswered" 
                   :src="other01Img" 
                   alt="opponent" 
-                  class="choice-icon otherSide-choice"
+                  class="choice-icon left-icon"
                 />
 
                 <!-- 中間文字 -->
@@ -59,26 +59,30 @@
                   {{ option }}
                 </span>
 
-                <!-- 右邊自己選擇答案 -->
+                <!-- 右邊自己選擇答案 - 絕對定位 -->
                 <img 
                   v-if="userChoice === index && hasAnswered" 
                   :src="self06Img" 
                   alt="player" 
-                  class="choice-icon myself-choice"
+                  class="choice-icon right-icon"
                 />
               </button>
             </div>
           </div>
         </div>
       </transition>
+
+      <DefaultReply2 :key="conversationKey"/>
     </div>
   </main>
+  
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import PairingMenu from '../components/PairingMenu.vue';
+import DefaultReply2 from '../components/DefaultReply2.vue';
 import other01Img from '@/assets/images/pairing_img/anons/other01.png';
 import self06Img from '@/assets/images/pairing_img/anons/self06.png';
 
@@ -89,6 +93,8 @@ const remainingTime = ref(30);
 const hasAnswered = ref(false);
 const userChoice = ref(null);
 const opponentChoice = ref(null);
+const isTimerActive = ref(false); // 控制計時器是否啟動
+const conversationKey = ref(0); // 用來重置對話組件
 let timer = null;
 
 // 問題資料
@@ -117,17 +123,26 @@ const questions = ref([
 
 // 進度條
 const progressPercentage = computed(() => {
+  // 如果計時器未啟動，顯示 100%
+  if (!isTimerActive.value) {
+    return 100;
+  }
   return (remainingTime.value / 30) * 100;
 });
 
 // 開始計時
 function startTimer() {
+  isTimerActive.value = true; // 啟動計時器狀態
   timer = setInterval(() => {
     remainingTime.value--;
     
     if (remainingTime.value <= 0) {
-      // 30秒結束自動切換到下一題
-      nextQuestion();
+      clearInterval(timer);
+      isTimerActive.value = false; // 停止計時器狀態
+      // 進度條到 0 後停留 0.5 秒再切換下一題
+      setTimeout(() => {
+        nextQuestion();
+      }, 500);
     }
   }, 1000);
 };
@@ -147,30 +162,32 @@ function selectAnswer(index) {
 
 // 下一題
 function nextQuestion() {
-  clearInterval(timer);
-  
   if (currentQuestion.value < totalQuestions.value - 1) {
-    
     currentQuestion.value++;
-    resetQuestionState();
-    startTimer();
+   // 重設狀態但不啟動計時器
+    isTimerActive.value = false; // 確保計時器處於未啟動狀態（進度條 100%
+    hasAnswered.value = false;
+    userChoice.value = null;
+    opponentChoice.value = null;
+    remainingTime.value = 30;
+    conversationKey.value++; // 重置對話組件
+
+    // 等待畫面切換動畫完成後再重設時間並開始計時
+    setTimeout(() => {
+      startTimer();  // 開始倒數（從 100% 到 0%）
+    }, 1800); // 配合 slide 動畫時間
   } else {
     // 問題答完切換下一頁
     router.push('/PairingResult');
   };
 };
 
-// 重設問題秒數
-function resetQuestionState() {
-  remainingTime.value = 30;
-  hasAnswered.value = false;
-  userChoice.value = null;
-  opponentChoice.value = null;
-};
-
 // 從開始第一題
 onMounted(() => {
-  startTimer();
+  isTimerActive.value = false; // 初始狀態進度條顯示 100%
+  setTimeout(() => {
+    startTimer(); // 延遲一點開始第一題的倒數
+  }, 500);
 });
 
 // 清除計時器
@@ -214,23 +231,46 @@ onUnmounted(() => {
   line-height: 22px;
   padding: 15px 0px;
   width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .answer-btn.selected {
   background-color: #FB923C;
   border: none;
-  color: white;
+  color: #FFFFFF;
   text-align: center;
 }
+
+/* 圖標 - 使用絕對定位，不影響按鈕原始大小 */
 .choice-icon {
   width: 36px;
   height: 36px;
   border-radius: 50%;
   transition: opacity 0.8s ease;
   opacity: 1;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.left-icon {
+  left: 15px;
+}
+.right-icon {
+  right: 15px;
 }
 .answer-text {
-  flex: 1;
   text-align: center;
+  color: #3d3d3d;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+}
+/* 選中狀態時文字變白色 */
+.answer-btn.selected .answer-text {
+  color: #FFFFFF;
 }
 /* 切換題目效果 */
 .slide-enter-active,
@@ -245,4 +285,51 @@ onUnmounted(() => {
   transform: translateX(-100%);
   opacity: 0;
 }
+/* 對話 */
+/* .conversation {
+  margin-bottom: 18px;
+}
+.conversation-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+.conversation-circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+.circle-other {
+  background: #FCF6C5;
+  position: absolute;
+  top: -7%;
+  left: 15%;
+}
+.circle-self {
+  background: #EFF3D4;
+  position: absolute;
+  top: -4%;
+  right: 18%;
+}
+.conversation-Input {
+  height: 81px;
+}
+.otherInput-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #FCF6C5;
+  position: absolute;
+  bottom: -15%;
+  left: 15%;
+}
+.myselfInput-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #EFF3D4;
+  position: absolute;
+  bottom: -15%;
+  right: 15%;
+} */
 </style>

@@ -1,8 +1,8 @@
 <template>
   <div class="bg-primary-50">
-    <bg_header class="" />
+    <bg_header/>
     <div class="recap">
-      <img src="../assets/img/other01.png" alt="anon" />
+      <img src="../assets/images/pairing_img/other01.png" alt="anon" />
       <h5>你與<span>陽光宅男</span><br />完成了一場美食默契大挑戰！</h5>
       <p>點擊上方頭像解鎖對方照片！</p>
     </div>
