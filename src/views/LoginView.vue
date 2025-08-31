@@ -15,7 +15,7 @@
         </div>
 
         <div class="login">
-          <button type="button" class="btn btn-primary w-100">登入</button>
+          <router-link to="/CreateProfile" class="btn btn-primary w-100">登入</router-link>
           <router-link to="/register" class="btn btn-secondary w-100">註冊</router-link>
         </div>
       </div>
