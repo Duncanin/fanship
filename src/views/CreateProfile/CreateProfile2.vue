@@ -90,10 +90,14 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 function onNext() {
   if (!isFormValid.value) return
-  router.push('/createProfile-3')
+  router.push('/createProfile-3').then(() => {
+    window.scrollTo(0, 0)
+  })
 }
 function onSkip() {
-  router.push('/createProfile-3')
+  router.push('/createProfile-3').then(() => {
+    window.scrollTo(0, 0)
+  })
 }
 </script>
 
@@ -223,10 +227,11 @@ function onSkip() {
           </template>
         </div>
       </form>
-
-      <div
-        class="mt-auto d-flex flex-column gap-spac-s sticky-bottom pt-spac-l pb-spac-3xl border-top bg-white"
-      >
+    </div>
+  </div>
+  <div class="sticky-bottom pt-spac-l pb-spac-3xl border-top bg-white">
+    <div class="container">
+      <div class="d-flex flex-column gap-spac-s">
         <button
           type="button"
           class="btn btn-primary text-white w-100 rounded-pill py-3"
@@ -235,6 +240,7 @@ function onSkip() {
         >
           下一步
         </button>
+
         <button
           type="button"
           class="btn btn-secondary shadow-light w-100 rounded-pill py-3"

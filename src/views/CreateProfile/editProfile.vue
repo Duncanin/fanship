@@ -687,7 +687,7 @@ function setActive(index) {
             </h4>
             <p class="text-secondary-400 fs-text-md m-0 text-end">0/9</p>
             <div class="grid-3">
-              <buttom
+              <button
                 class="bg-secondary-50 rounded-xs d-flex justify-content-center align-items-center border-cus"
                 style="max-height: 110px; cursor: pointer"
               >
@@ -708,9 +708,9 @@ function setActive(index) {
                     />
                   </svg>
                 </span>
-              </buttom>
+              </button>
 
-              <buttom
+              <button
                 class="bg-secondary-50 rounded-xs d-flex justify-content-center align-items-center border-cus"
                 style="max-height: 110px; cursor: pointer"
               >
@@ -731,9 +731,9 @@ function setActive(index) {
                     />
                   </svg>
                 </span>
-              </buttom>
+              </button>
 
-              <buttom
+              <button
                 class="bg-secondary-50 rounded-xs d-flex justify-content-center align-items-center border-cus"
                 style="max-height: 110px; cursor: pointer"
               >
@@ -754,9 +754,9 @@ function setActive(index) {
                     />
                   </svg>
                 </span>
-              </buttom>
+              </button>
 
-              <buttom
+              <button
                 class="bg-secondary-50 rounded-xs d-flex justify-content-center align-items-center border-cus"
                 style="max-height: 110px; cursor: pointer"
               >
@@ -777,9 +777,9 @@ function setActive(index) {
                     />
                   </svg>
                 </span>
-              </buttom>
+              </button>
 
-              <buttom
+              <button
                 class="bg-secondary-50 rounded-xs d-flex justify-content-center align-items-center border-cus"
                 style="max-height: 110px; cursor: pointer"
               >
@@ -800,9 +800,9 @@ function setActive(index) {
                     />
                   </svg>
                 </span>
-              </buttom>
+              </button>
 
-              <buttom
+              <button
                 class="bg-secondary-50 rounded-xs d-flex justify-content-center align-items-center border-cus"
                 style="max-height: 110px; cursor: pointer"
               >
@@ -823,9 +823,9 @@ function setActive(index) {
                     />
                   </svg>
                 </span>
-              </buttom>
+              </button>
 
-              <buttom
+              <button
                 class="bg-secondary-50 rounded-xs d-flex justify-content-center align-items-center border-cus"
                 style="max-height: 110px; cursor: pointer"
               >
@@ -846,9 +846,9 @@ function setActive(index) {
                     />
                   </svg>
                 </span>
-              </buttom>
+              </button>
 
-              <buttom
+              <button
                 class="bg-secondary-50 rounded-xs d-flex justify-content-center align-items-center border-cus"
                 style="max-height: 110px; cursor: pointer"
               >
@@ -869,9 +869,9 @@ function setActive(index) {
                     />
                   </svg>
                 </span>
-              </buttom>
+              </button>
 
-              <buttom
+              <button
                 class="bg-secondary-50 rounded-xs d-flex justify-content-center align-items-center border-cus"
                 style="max-height: 110px; cursor: pointer"
               >
@@ -892,7 +892,7 @@ function setActive(index) {
                     />
                   </svg>
                 </span>
-              </buttom>
+              </button>
             </div>
           </div>
 
@@ -915,7 +915,7 @@ function setActive(index) {
         </div>
       </div>
 
-      <div class="row mt-spac-xl">
+      <div class="row mt-spac-xl sticky-bottom">
         <div class="col-12 d-flex flex-column justify-content-center align-items-center">
           <!-- <MainNavBar /> -->
           <div class="main-nav_bar bg-secondary-800 rounded-pill">
@@ -1007,10 +1007,10 @@ li {
   fill: #fdb468;
 }
 .main-nav_bar {
-  margin-bottom: 64px;
   position: relative;
   height: auto;
   min-height: 64px;
+  margin-bottom: 24px;
 }
 .nav_bar_item {
   position: relative;
@@ -1094,9 +1094,16 @@ li {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
+  button {
+    border: 1.5px dashed #1b1b1b4d;
+    padding: 38px 25px;
+  }
 }
 .grid-3 > * {
   min-width: 0;
   box-sizing: border-box;
+}
+label {
+  align-items: center;
 }
 </style>
