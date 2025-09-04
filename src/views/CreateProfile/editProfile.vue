@@ -897,20 +897,22 @@ function setActive(index) {
           </div>
 
           <div class="mt-auto d-flex flex-column gap-spac-s">
-            <button
+            <router-link
+              to="/myProfile"
               type="button"
               class="btn btn-primary text-white w-100 rounded-pill py-3"
               @click="SaveChanges"
             >
               儲存變更
-            </button>
-            <button
+            </router-link>
+            <router-link
+              to="/myProfile"
               type="button"
               class="btn btn-secondary shadow-light w-100 rounded-pill py-3"
               @click="toCancel"
             >
               取消
-            </button>
+            </router-link>
           </div>
         </div>
       </div>

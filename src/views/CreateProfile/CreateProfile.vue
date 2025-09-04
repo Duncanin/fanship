@@ -3,6 +3,9 @@ import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import Header from './HeaderView.vue'
 
+import { ElDatePicker } from 'element-plus'
+import 'element-plus/dist/index.css'
+
 // form state
 const nickname = ref('')
 const gender = ref('')
@@ -101,12 +104,20 @@ function onSubmit() {
         <!-- 生日 -->
         <div class="mb-3">
           <label class="form-label ms-2">生日</label>
-          <input
+          <!-- <input
             type="date"
             class="form-control rounded-pill pe-spac-m py-2"
             v-model="birthday"
             :class="birthday ? 'text-primary' : 'text-secondary-400'"
             placeholder="請選擇生日"
+          /> -->
+          <el-date-picker
+            v-model="birthday"
+            type="date"
+            placeholder="請選擇生日"
+            format="YYYY-MM-DD"
+            value-format="YYYY-MM-DD"
+            class="d-block birthday-cus"
           />
         </div>
 
@@ -159,10 +170,37 @@ function onSubmit() {
 </template>
 
 <style>
-/* input[type='date'] {
-  appearance: none !important;
-  -webkit-appearance: none !important;
-  text-align: left !important;
-  -webkit-text-align: left !important;
-} */
+.el-input {
+  width: 100%;
+}
+.el-input__wrapper {
+  background-color: #f3f3f3;
+  border-radius: 9999px;
+  border: none;
+  box-shadow: none;
+  flex-direction: row-reverse;
+  width: 100%;
+  font-size: 16px;
+  background: #efefef;
+  padding: 0;
+  span {
+    margin-left: 8px;
+  }
+  padding: 5px 0;
+}
+.el-input__inner::placeholder {
+  color: var(--bs-secondary-400);
+  font-weight: 500;
+}
+.birthday-cus.el-date-editor.el-input,
+.birthday-cus .el-input,
+.birthday-cus .el-input__wrapper {
+  width: 100% !important;
+}
+.el-icon {
+  color: #6d6d6d;
+}
+.el-input__prefix {
+  margin-right: 8px;
+}
 </style>
