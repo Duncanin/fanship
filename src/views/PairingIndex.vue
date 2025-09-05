@@ -10,7 +10,7 @@
             嘴不合也能擦出火花，誰說對味才是默契？<br>一起回答問題、即時互動聊出默契！
           </p>
 
-          <button type="button" class="btn btn-primary-400 mb-spac-3xl py-spac-m px-spac-2xl text-secondary-0 fw-bold fs-5 lh-h5 rounded-full shadow-light"
+          <button type="button" class="btn btn-primary-400 mb-spac-3xl py-spac-m px-spac-2xl text-secondary-0 fw-bold fs-5 lh-h5 rounded-full shadow-light btn-search-width"
           @click="$router.push('/pairing-icon')"> 
           尋找飯友
           </button>
@@ -34,5 +34,8 @@ import homepageImg from '@/assets/images/pairing_img/homepage.png';
 .img-homepage {
   max-height: 264px;
   max-width: 264px;
+}
+.btn-search-width {
+  min-width: 160px;
 }
 </style>

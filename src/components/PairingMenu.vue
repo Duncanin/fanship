@@ -1,5 +1,4 @@
 <template>
-
   <div class="container pairingMenu-spacer mb-spac-s">
     <div class="row">
       <div class="col-12 d-flex justify-content-between align-items-center">
