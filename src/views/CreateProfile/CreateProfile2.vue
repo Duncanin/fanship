@@ -107,7 +107,7 @@ function onSkip() {
   <div class="container">
     <div class="py-spac-l d-flex flex-column gap-spac-m profile2">
       <!-- 進度條 -->
-      <div class="progress bg-primary-100" style="height: 12px">
+      <div class="progress bg-primary-100 shadow-none" style="height: 12px">
         <div
           class="progress-bar bg-primary-300 w-50"
           role="progressbar"
