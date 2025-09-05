@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue'
 import milliImg from '@/assets/images/navigationBtn/milli.png'
-
 const activeIndex = ref(1)
 
 function setActive(index) {
@@ -429,6 +428,7 @@ function setActive(index) {
         </div>
       </div>
     </div>
+      
   </div>
 </template>
 

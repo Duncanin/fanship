@@ -136,12 +136,12 @@ const inputText = ref(""); // 輸入框內容
 
 // 模擬對方答案
 const otherReplies = [
-  "好像不錯耶！",
-  "真的假的？",
-  "哈哈哈我也是這樣想",
-  "這個我無法接受啦 ",
-  "有道理耶！",
-  "哈哈哈你太誇張了",
+  "😍 好像不錯耶！",
+  "❗❗❗ 真的假的？",
+  "🙌 哈哈哈我也是這樣想",
+  "😰 這個我無法接受啦 ",
+  "😎 有道理耶！",
+  "😆 哈哈哈你太誇張了",
 ];
 
 const textReplay = ref([
@@ -161,7 +161,7 @@ const lastSender = ref("");
 
 // 隨機點判斷覆判斷
 function pick(c) {
-  selfMsg.value = c.text; // 帶進右邊框框
+  selfMsg.value = c.emoji + c.text; // 帶進右邊框框
   lastSender.value = "self"; // 預設自己對話
   console.log('pick:', c)
   simulateOtherReply();

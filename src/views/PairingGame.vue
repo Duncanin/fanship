@@ -4,14 +4,15 @@
     <div class="container mt-spac-s">
       <!-- 進度條 -->
       <div class="d-flex justify-content-start align-items-center mb-spac-m">
-        <div class="progress-bar rounded-full me-spac-s">
+        <div class="progress-bar rounded-full me-spac-s flex-grow-1">
           <div 
-            class="progress-fill rounded-full" 
+            class="progress-fill rounded-full"
+            :class="{ 'no-transition': !isTimerActive }"
             :style="{ width: `${progressPercentage}%` }"
           ></div>
         </div>
         <div class="flex-shrink-0">
-          {{ remainingTime }} 秒
+          {{ displayTime }} 秒
         </div>
       </div>
 
@@ -124,10 +125,18 @@ const questions = ref([
 // 進度條
 const progressPercentage = computed(() => {
   // 如果計時器未啟動，顯示 100%
-  if (!isTimerActive.value) {
+  if (!isTimerActive.value && remainingTime.value > 0) {
     return 100;
   }
   return (remainingTime.value / 30) * 100;
+});
+
+// 顯示的秒數
+const displayTime = computed(() => {
+  if (!isTimerActive.value && remainingTime.value > 0) {
+    return 30; // 當計時器未啟動時，總是顯示 30 秒
+  }
+  return remainingTime.value;
 });
 
 // 開始計時
@@ -138,11 +147,12 @@ function startTimer() {
     
     if (remainingTime.value <= 0) {
       clearInterval(timer);
+      remainingTime.value = 0; // 確實倒數顯示出 0 秒狀態
       isTimerActive.value = false; // 停止計時器狀態
       // 進度條到 0 後停留 0.5 秒再切換下一題
       setTimeout(() => {
         nextQuestion();
-      }, 500);
+      }, 800);
     }
   }, 1000);
 };
@@ -163,14 +173,25 @@ function selectAnswer(index) {
 // 下一題
 function nextQuestion() {
   if (currentQuestion.value < totalQuestions.value - 1) {
+      // 清除計時器
+    if (timer) {
+      clearInterval(timer);
+    }
+
     currentQuestion.value++;
-   // 重設狀態但不啟動計時器
+    // 重設狀態但不啟動計時器
     isTimerActive.value = false; // 確保計時器處於未啟動狀態（進度條 100%
+    remainingTime.value = 30;
     hasAnswered.value = false;
     userChoice.value = null;
     opponentChoice.value = null;
-    remainingTime.value = 30;
     conversationKey.value++; // 重置對話組件
+
+    // 在下一個 tick 設定時間，確保 DOM 已更新
+    // setTimeout(() => {
+    //   remainingTime.value = 30;
+    // }, 0);
+    
 
     // 等待畫面切換動畫完成後再重設時間並開始計時
     setTimeout(() => {
@@ -187,7 +208,7 @@ onMounted(() => {
   isTimerActive.value = false; // 初始狀態進度條顯示 100%
   setTimeout(() => {
     startTimer(); // 延遲一點開始第一題的倒數
-  }, 500);
+  }, 1000);
 });
 
 // 清除計時器
@@ -202,7 +223,6 @@ onUnmounted(() => {
 /* 進度條樣式 */
 .progress-bar {
   position: relative;
-  width: 281px;
   height: 12px;
   background-color: var(--surface-progressbar-empty, #FFEDD5);
   overflow: hidden;
@@ -213,14 +233,20 @@ onUnmounted(() => {
   inset: 0;
   background-color: rgba(27, 27, 27, 0.1); 
   pointer-events: none;
+  z-index: 1;
 }
 .progress-fill {
   width: 100%;
   height: 100%;
   background: #FDB468;
   transition: width 3s linear;
+  position: absolute;
+  z-index: 2;
 }
-
+/* 新增：停用 transition 的 class */
+.progress-fill.no-transition {
+  transition: none !important;
+}
 /* 答案選項 */
 .answer-btn {
   background-color: #FFEDD5;
@@ -235,6 +261,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
+  max-height: 52px;
 }
 .answer-btn.selected {
   background-color: #FB923C;
@@ -262,6 +289,7 @@ onUnmounted(() => {
   right: 15px;
 }
 .answer-text {
+  margin-left: 0px;
   text-align: center;
   color: #3d3d3d;
   width: 100%;
