@@ -1,5 +1,15 @@
 <template>
   <main class="bg-primary-100">
+    
+    <div style="width: 200px; overflow-x: auto; white-space: nowrap; border: 1px solid #333;">
+      <span style="display:inline-block; width:150px; background:lightblue;">內容1</span>
+      <span style="display:inline-block; width:150px; background:lightgreen;">內容2</span>
+      <span style="display:inline-block; width:150px; background:lightpink;">內容3</span>
+      <span style="display:inline-block; width:150px; background:lightpink;">內容4</span>
+      <span style="display:inline-block; width:150px; background:lightpink;">內容5</span>
+      <span style="display:inline-block; width:150px; background:lightpink;">內容6</span>
+      <span style="display:inline-block; width:150px; background:lightpink;">內容7</span>
+    </div>
     <bg_header class="" />
 
     <div class="container">
@@ -135,7 +145,11 @@
           <p>1000 -full</p>
         </div>
       </div>
+      
     </div>
+
+
+
   </main>
 </template>
 
