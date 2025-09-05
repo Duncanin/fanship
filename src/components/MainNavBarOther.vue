@@ -2,90 +2,85 @@
   <div class="main-nav_bar bg-secondary-800 rounded-pill">
     <ul class="d-flex justify-content-between align-items-center py-spac-s px-spac-5xl">
       <li class="nav_bar_item"
-        :class="{ active: activeIndex === 0 }"
-        @click="setActive(0, $event)">
+        :class="{ active: activeIndex === 0, hideLabel: activeIndex === 1 }"
+        @click="setActive(0)" >
         <div class="nav_icon_wrapper">
           <div class="icon icon-chat">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 16 16">
-              
               <path fill="#ffedd5" d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7"/>
-              
               <circle fill="#454545" cx="4" cy="8" r="1"/>
               <circle fill="#454545" cx="8" cy="8" r="1"/>
               <circle fill="#454545" cx="12" cy="8" r="1"/>
             </svg>
           </div>
+          <p class="nav-label">飯聊</p>
         </div>
       </li>
-      <li class="nav_bar_item milli-w-cus mx-spac-4xl"
-        :class="{ active: activeIndex === 1 }"
-        @click="setActive(1, $event)">
+      <!-- 首頁 -->
+      <li class="nav_bar_item milli-w-cus mx-spac-4xl home-item">
+        <!-- 固定凹槽 -->
+        <div class="bgHalfGroove"></div>
         <div class="nav_icon_wrapper">
           <div class="icon">
             <img :src="milliImg" alt="milli" class="rounded-circle">
           </div>
+          <p class="nav-label">首頁</p>
         </div>
+        
       </li>
       <li class="nav_bar_item"
-        :class="{ active: activeIndex === 2 }"
-        @click="setActive(2, $event)">
+        :class="{ active: activeIndex === 1, hideLabel: activeIndex === 0 }"
+        @click="setActive(1)">
         <div class="nav_icon_wrapper">
           <div class="icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#ffedd5" class="bi bi-person-fill" viewBox="0 0 16 16">
               <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
             </svg>
           </div>
+          <p class="nav-label">個人資料</p>
         </div>
       </li>
-      <div class="bgHalfGroove" 
-      :style="{ transform: `translateX(calc(80px * ${activeIndex}))` }"
-      ref="groove"
-      ></div>
     </ul>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick } from 'vue'
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import milliImg from '@/assets/images/navigationBtn/milli.png';
 
-const activeIndex = ref(1)
-const groove = ref(null)
+const route = useRoute()
+// 預設沒有選中項目
+const activeIndex = ref(-1) 
 
-function moveGrooveTo(index) {
-  const items = document.querySelectorAll(".nav_bar_item")
-  const grooveEl = groove.value
-  if (!items[index] || !grooveEl) return
-
-  const targetRect = items[index].getBoundingClientRect()
-  const navBarRect = items[0].parentNode.getBoundingClientRect()
-  
-  // 計算中心位置
-  const targetCenterX = targetRect.left - navBarRect.left + targetRect.width / 2
-  
-  // 凹槽寬度的一半，設定居中對齊
-  const grooveHalfWidth = 40
-  
-  grooveEl.style.transform = `translateX(${targetCenterX - grooveHalfWidth}px)`
+// 判斷切換到的頁面 icon active 狀態
+function setActiveByRoute(path) {
+  if (path.startsWith('/ChatRoom')) {
+    activeIndex.value = 0
+  } else if (path.startsWith('/myProfile')) {
+    activeIndex.value = 1
+  } else {
+    activeIndex.value = -1
+  }
 }
+
+// 初始化
+setActiveByRoute(route.path)
+
+// 更新 active 狀態
+watch(
+  () => route.path,
+  (newPath) => {
+    setActiveByRoute(newPath)
+  }
+)
 
 function setActive(index) {
   activeIndex.value = index
-  nextTick(() => moveGrooveTo(index))
 }
-
-onMounted(() => {
-  // 初始狀態下凹槽位置要是正確
-  nextTick(() => moveGrooveTo(activeIndex.value))
-})
 </script>
 
 <style scoped>
-ul,li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
 .main-nav_bar {
   margin-bottom: 64px;
   position: relative;
@@ -97,7 +92,7 @@ ul,li {
   position: relative;
   z-index: 1;
   width: 40px;
-  height: 40px;
+  height: 40px; 
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -106,69 +101,95 @@ ul,li {
 .nav_icon_wrapper  {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: all 0.5s ease;
 }
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .icon svg,
 .icon img {
-  position: relative;
   width: 40px;
   height: 40px;
-  transition: 0.5s;
+  transition: all 0.5s ease;
 }
-.nav_bar_item.active .nav_icon_wrapper .icon {
-  transform: translateY(-32px) scale(1.6);
+.nav-label {
+  font-size: 11px;
+  line-height: 1;
+  font-weight: bold;
+  color: #ffedd5;
+  margin: 0;
+  padding: 1px 0 0 1px;
+  text-align: center;
+  white-space: nowrap;
+  transition: all 0.5s ease;
+}
+/* 首頁 固定放大效果 */
+.home-item .nav_icon_wrapper .icon {
+  transform: translateY(-28px) scale(1.6);
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.1));
 }
-/* 選中狀態下改變 SVG 顏色 */
+.home-item .nav-label {
+  opacity: 0;
+}
+/* 左右兩邊項目的 active 狀態 */
+.nav_bar_item.active .nav-label {
+  color: #FDB468;
+}
 .nav_bar_item.active .icon svg path {
   fill: #FDB468;
-}
-/* 保持圓點顏色不變 */
-.nav_bar_item.active .icon svg circle {
-  fill: #454545;
 }
 .nav_bar_item.active .icon svg {
   fill: #FDB468;
 }
-/* 凹槽 */
+ /* 保持圓點顏色不變 */
+.nav_bar_item.active .icon svg circle {
+  fill: #454545;
+}
+/* 點選左右 icon 隱藏另外一邊文字 */
+.hideLabel .nav-label {
+  opacity: 0;
+}
+/* 固定凹槽樣式 */
 .bgHalfGroove {
   position: absolute;
-  top: -55%;
-  left: 0;
-  width: 80px;
-  height: 80px;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 70px;
   background: #FFF;
-  border: 6px solid #FFF;
+  border: 4px solid #FFF;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s ease;
-  
+  z-index: 0;
 }
 .bgHalfGroove::before {
   content: '';
   position: absolute;
-  top: 43%;
-  left: -31px;
-  width: 30px;
-  height: 30px;
+  top: 40%;
+  left: -33px;
+  width: 35px;
+  height: 35px;
   background: transparent;
-  border-top-right-radius: 30px;
-  box-shadow: 1px -12px 0 #FFF;
+  border-top-right-radius: 35px;
+  box-shadow: 1px -15px 0 #FFF;
 }
 .bgHalfGroove::after {
   content: '';
   position: absolute;
-  top: 43%;
-  right: -31px;
-  width: 30px;
-  height: 30px;
+  top: 40%;
+  right: -33px;
+  width: 35px;
+  height: 35px;
   background: transparent;
-  border-top-left-radius: 30px;
-  box-shadow: -1px -12px 0 #FFF;
+  border-top-left-radius: 35px;
+  box-shadow: -1px -15px 0 #FFF;
 }
-
 </style>

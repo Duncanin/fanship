@@ -5,12 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fanship</title>
-  <script type="module" crossorigin src="/fanship/assets/index-CgdK0j11.js"></script>
-  <link rel="stylesheet" crossorigin href="/fanship/assets/index-CpEKSWzl.css">
+  <script type="module" crossorigin src="/fanship/assets/index-CGCa0lwn.js"></script>
+  <link rel="stylesheet" crossorigin href="/fanship/assets/index-DgAm_a9S.css">
 </head>
 
 <body>
   <div id="app"></div>
+  <script>
+    (function () {
+      if (location.hash === '' || location.hash === '#/') {
+        location.replace(location.origin + location.pathname + '#/login');
+      }
+    })();
+  </script>
 </body>
 
 </html>
