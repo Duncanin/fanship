@@ -6,10 +6,14 @@ import milliImg from '@/assets/images/login/milli.png'
 const defaultAvatar = milliImg
 const router = useRouter()
 function onParing() {
-  router.push('/pairing-index')
+  router.push('/pairing-index').then(() => {
+    window.scrollTo(0, 0)
+  })
 }
 function toProfile() {
-  router.push('/myProfile')
+  router.push('/myProfile').then(() => {
+    window.scrollTo(0, 0)
+  })
 }
 </script>
 

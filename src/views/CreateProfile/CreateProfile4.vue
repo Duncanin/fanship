@@ -12,10 +12,14 @@ const isFormValid = computed(() => !!selectedImage.value)
 const router = useRouter()
 function onNext() {
   if (!isFormValid.value) return
-  router.push('/createProfile-5')
+  router.push('/createProfile-5').then(() => {
+    window.scrollTo(0, 0)
+  })
 }
 function onSkip() {
-  router.push('/createProfile-5')
+  router.push('/createProfile-5').then(() => {
+    window.scrollTo(0, 0)
+  })
 }
 
 function onFileChange(event) {

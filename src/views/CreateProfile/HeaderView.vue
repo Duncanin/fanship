@@ -1,4 +1,10 @@
-<script setup></script>
+<script setup>
+import { useRouter } from 'vue-router'
+const router = useRouter()
+const goBack = () => {
+  router.back()
+}
+</script>
 
 <template>
   <div class="bg-primary-100 profileHeader">
@@ -7,6 +13,7 @@
         <button
           type="button"
           class="border-0 bg-primary-100 p-0 position-absolute top-0 start-0 text-secondary-700"
+          @click="goBack"
         >
           <svg
             width="32"

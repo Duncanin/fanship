@@ -173,10 +173,14 @@ const isFormValid = computed(
 const router = useRouter()
 function onNext() {
   if (!isFormValid.value) return
-  router.push('/createProfile-4')
+  router.push('/createProfile-4').then(() => {
+    window.scrollTo(0, 0)
+  })
 }
 function onSkip() {
-  router.push('/createProfile-4')
+  router.push('/createProfile-4').then(() => {
+    window.scrollTo(0, 0)
+  })
 }
 </script>
 
@@ -186,7 +190,7 @@ function onSkip() {
   <div class="container">
     <div class="py-spac-l d-flex flex-column gap-spac-m profile2">
       <!-- 進度條 -->
-      <div class="progress bg-primary-100" style="height: 12px">
+      <div class="progress bg-primary-100 shadow-none" style="height: 12px">
         <div
           class="progress-bar bg-primary-300 w-75"
           role="progressbar"
@@ -466,10 +470,11 @@ function onSkip() {
           </template>
         </div>
       </form>
-
-      <div
-        class="mt-auto d-flex flex-column gap-spac-s sticky-bottom pt-spac-l pb-spac-3xl border-top bg-white"
-      >
+    </div>
+  </div>
+  <div class="sticky-bottom pt-spac-l pb-spac-3xl border-top bg-white">
+    <div class="container">
+      <div class="d-flex flex-column gap-spac-s">
         <button
           type="button"
           class="btn btn-primary text-white w-100 rounded-pill py-3"

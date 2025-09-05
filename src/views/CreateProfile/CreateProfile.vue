@@ -3,6 +3,9 @@ import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import Header from './HeaderView.vue'
 
+import { ElDatePicker } from 'element-plus'
+import 'element-plus/dist/index.css'
+
 // form state
 const nickname = ref('')
 const gender = ref('')
@@ -34,7 +37,9 @@ function onSubmit() {
     birthday: birthday.value,
     region: region.value,
   })
-  router.push('/createProfile-2')
+  router.push('/createProfile-2').then(() => {
+    window.scrollTo(0, 0)
+  })
 }
 </script>
 
@@ -43,7 +48,7 @@ function onSubmit() {
   <div class="container">
     <div class="py-spac-l d-flex flex-column gap-spac-m">
       <!-- 進度條 -->
-      <div class="progress bg-primary-100" style="height: 12px">
+      <div class="progress bg-primary-100 shadow-none" style="height: 12px">
         <div
           class="progress-bar bg-primary-300 w-25"
           role="progressbar"
@@ -84,7 +89,11 @@ function onSubmit() {
         <!-- 性別 -->
         <div class="mb-3">
           <label class="form-label ms-2">性別</label>
-          <select class="form-select rounded-pill py-2" v-model="gender">
+          <select
+            class="form-select rounded-pill py-2 shadow-none"
+            v-model="gender"
+            :class="gender ? 'text-primary' : 'text-secondary-400'"
+          >
             <option value="" class="d-none" disabled>請選擇性別</option>
             <option value="female">女</option>
             <option value="male">男</option>
@@ -95,18 +104,31 @@ function onSubmit() {
         <!-- 生日 -->
         <div class="mb-3">
           <label class="form-label ms-2">生日</label>
-          <input
+          <!-- <input
             type="date"
             class="form-control rounded-pill pe-spac-m py-2"
             v-model="birthday"
+            :class="birthday ? 'text-primary' : 'text-secondary-400'"
             placeholder="請選擇生日"
+          /> -->
+          <el-date-picker
+            v-model="birthday"
+            type="date"
+            placeholder="請選擇生日"
+            format="YYYY-MM-DD"
+            value-format="YYYY-MM-DD"
+            class="d-block birthday-cus"
           />
         </div>
 
         <!-- 地區 -->
         <div class="mb-4">
           <label class="form-label ms-2">地區</label>
-          <select class="form-select rounded-pill py-2" v-model="region">
+          <select
+            class="form-select rounded-pill py-2 shadow-none"
+            v-model="region"
+            :class="region ? 'text-primary' : 'text-secondary-400'"
+          >
             <option value="" disabled>請選擇地區</option>
             <option value="TaipeiCounty">台北市</option>
             <option value="NewTaipei">新北市</option>
@@ -130,14 +152,55 @@ function onSubmit() {
             <option value="Lienchiang">連江</option>
           </select>
         </div>
-        <button
-          type="submit"
-          class="btn btn-primary text-white w-100 rounded-pill py-3"
-          :disabled="!isFormValid"
-        >
-          下一步
-        </button>
       </form>
     </div>
   </div>
+  <div class="border-top border-primary border-opacity-10 pt-spac-l bg-white sticky-bottom">
+    <div class="container">
+      <button
+        type="submit"
+        class="btn btn-primary text-white w-100 rounded-pill py-3"
+        :disabled="!isFormValid"
+        @click="onSubmit"
+      >
+        下一步
+      </button>
+    </div>
+  </div>
 </template>
+
+<style>
+.el-input {
+  width: 100%;
+}
+.el-input__wrapper {
+  background-color: #f3f3f3;
+  border-radius: 9999px;
+  border: none;
+  box-shadow: none;
+  flex-direction: row-reverse;
+  width: 100%;
+  font-size: 16px;
+  background: #efefef;
+  padding: 0;
+  span {
+    margin-left: 8px;
+  }
+  padding: 5px 0;
+}
+.el-input__inner::placeholder {
+  color: var(--bs-secondary-400);
+  font-weight: 500;
+}
+.birthday-cus.el-date-editor.el-input,
+.birthday-cus .el-input,
+.birthday-cus .el-input__wrapper {
+  width: 100% !important;
+}
+.el-icon {
+  color: #6d6d6d;
+}
+.el-input__prefix {
+  margin-right: 8px;
+}
+</style>

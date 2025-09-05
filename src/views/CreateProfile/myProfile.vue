@@ -354,8 +354,8 @@ function setActive(index) {
         </div>
       </div>
 
-      <div class="row mt-spac-xl">
-        <div class="col-12 d-flex flex-column justify-content-center align-items-center">
+      <div class="mt-spac-xl">
+        <div class="d-flex justify-content-center align-items-center">
           <!-- <MainNavBar /> -->
           <div class="main-nav_bar bg-secondary-800 rounded-pill">
             <ul class="d-flex justify-content-between align-items-center py-spac-xs px-spac-5xl">
