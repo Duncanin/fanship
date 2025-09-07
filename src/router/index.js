@@ -12,6 +12,7 @@ import PairingDetail from '../views/PairingDetail.vue'
 import PairingWaiting from '../views/PairingWaiting.vue'
 import PairingSuccess from '../views/PairingSuccess.vue'
 import ChatRoom from '../views/ChatRoom.vue'
+import ChatMessages from '../views/ChatMessages.vue'
 import CreateProfile from '../views/CreateProfile/CreateProfile.vue'
 import CreateProfile2 from '../views/CreateProfile/CreateProfile2.vue'
 import CreateProfile3 from '../views/CreateProfile/CreateProfile3.vue'
@@ -19,6 +20,7 @@ import CreateProfile4 from '../views/CreateProfile/CreateProfile4.vue'
 import CreateProfile5 from '../views/CreateProfile/CreateProfile5.vue'
 import myProfile from '../views/CreateProfile/myProfile.vue'
 import editProfile from '../views/CreateProfile/editProfile.vue'
+
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
@@ -65,6 +67,10 @@ const router = createRouter({
       path: '/ChatRoom',
       name: 'ChatRoom',
       component: ChatRoom,
+    },  {
+      path: '/ChatMessages',
+      name: 'ChatMessages',
+      component: ChatMessages,
     },
     {
       path: '/pairing-index',

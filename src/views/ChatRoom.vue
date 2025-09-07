@@ -264,9 +264,9 @@
   width: 16px;
   height: 16px;
 }
-* {
+/* * {
   outline: 1px solid pink;
-}
+} */
 </style>
 <script setup>
 import MainNavBar from '../components/main-nav-bar.vue'
