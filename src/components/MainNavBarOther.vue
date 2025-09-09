@@ -21,7 +21,7 @@
       :class="{ active: activeIndex === 1}"
         @click="setActive(1)" >
         <!-- 固定凹槽 -->
-        <div class="bgHalfGroove"></div>
+        <!-- <div class="bgHalfGroove"></div> -->
         <div class="nav_icon_wrapper">
           <div class="icon">
             <img :src="milliImg" alt="milli" class="rounded-circle">
@@ -171,7 +171,7 @@ watch(
   transition: all 0.3s ease;
 }
 /* 固定凹槽樣式 */
-.bgHalfGroove {
+/* .bgHalfGroove {
   position: absolute;
   top: -40px;
   left: 50%;
@@ -207,5 +207,5 @@ watch(
   background: transparent;
   border-top-left-radius: 35px;
   box-shadow: -1px -15px 0 #FFF;
-}
-</style>
+}*/
+</style> 
