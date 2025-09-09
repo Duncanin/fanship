@@ -13,8 +13,11 @@
       </div>
       <img src="../assets/images/pairing_img/matching-success.gif" alt="成功動圖" />
     </div>
-    <router-link to="/ChatRoom" class="btnA pairingChat">前往聊天室</router-link>
-    <a class="btnA pairingError" href="#">返回首頁</a>
+    <div>
+      <router-link to="/ChatMessages" class="btnA pairingChat">前往聊天室</router-link>
+      <router-link to="/pairing-index" class="btnA pairingError">返回首頁</router-link>
+    </div>
+    <hr class="border-0 m-0" />
   </div>
 </template>
 <style>
@@ -56,7 +59,6 @@
 .pairImgSuccess .connect img {
   width: 50%;
   height: 80%;
- 
 }
 
 /* * {

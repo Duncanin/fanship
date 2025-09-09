@@ -1,13 +1,24 @@
 <template>
   <div class="bg-primary-50">
-    <bg_header/>
+    <bg_header />
     <div class="recap">
-      <img src="../assets/images/pairing_img/other01.png" alt="anon" />
+      <div class="combine">
+        <img class="resultImg" src="../assets/images/pairing_img/other01.png" alt="anon" />
+        <div>
+          <img class="pointerImg" src="../assets/images/pairing_img/point.svg" alt="pointer" />
+        </div>
+      </div>
+
       <h5>你與<span>陽光宅男</span><br />完成了一場美食默契大挑戰！</h5>
       <p>點擊上方頭像解鎖對方照片！</p>
     </div>
-    <router-link to="/PairingDetail" class="btnA pairingChat">繼續聊天</router-link>
-    <a class="btnA pairingError" href="#">我們可能不適合做飯友</a>
+
+    <div>
+      <router-link to="/PairingDetail" class="btnA pairingChat">繼續聊天</router-link>
+      <router-link to="/pairing-index" class="btnA pairingError">我們可能不適合做飯友</router-link>
+    </div>
+
+    <hr class="border-0 m-0" />
   </div>
 </template> 
 
@@ -23,15 +34,35 @@
   border-radius: 32px;
   font-size: 20px;
 }
-.recap img {
+.resultImg {
+  max-width: 196px;
   width: 100%;
-  margin-top: 76px;
-  margin-bottom: 32px;
+  margin: 76px auto 32px auto;
+  display: block;
 }
-.recap img:active {
-  content: url('../assets/img/m-pfp2.png');
+.resultImg:active {
+  content: url('../assets/images/pairing_img/m-pfp2.png');
+  border-radius: 1000px; 
+}
+.combine {
+  position: relative;
+  max-width: 196px;
+  margin: 0 auto;
+}
+.pointerImg {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 56px;
+  height: 56px;
+  background-color: #fb923c73;
   border-radius: 1000px;
+  padding: 6px;
+  transform: rotate(-25deg);  
 }
+
 span {
   margin-left: 16px;
   color: #fb923c;

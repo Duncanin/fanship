@@ -351,6 +351,79 @@ import MainNavBarOther from '@/components/MainNavBarOther.vue';
       <div class="sticky-bottom">
         <MainNavBarOther />
       </div>
+      <div class="mt-spac-xl">
+        <div class="d-flex justify-content-center align-items-center">
+          <!-- <MainNavBar /> -->
+          <div class="main-nav_bar bg-secondary-800 rounded-pill">
+            <ul class="d-flex justify-content-between align-items-center py-spac-xs px-spac-5xl">
+              <li class="nav_bar_item" :class="{ active: activeIndex === 0 }" @click="setActive(0)">
+                <div class="nav_icon_wrapper">
+                  <div class="icon icon-chat">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 16 16"
+                      :class="{ 'shadow-icon': activeIndex === 0 }"
+                    >
+                      <path
+                        fill="#ffedd5"
+                        d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7"
+                      />
+
+                      <circle fill="#454545" cx="4" cy="8" r="1" />
+                      <circle fill="#454545" cx="8" cy="8" r="1" />
+                      <circle fill="#454545" cx="12" cy="8" r="1" />
+                    </svg>
+                  </div>
+                </div>
+              </li>
+              <li
+                class="nav_bar_item milli-w-cus mx-spac-4xl"
+                :class="{ active: activeIndex === 1 }"
+                @click="setActive(1)"
+              >
+                <div class="nav_icon_wrapper">
+                  <div class="icon">
+                    <img
+                      :src="milliImg"
+                      alt="milli"
+                      class="rounded-circle"
+                      :class="{ 'shadow-icon': activeIndex === 1 }"
+                    />
+                  </div>
+                </div>
+              </li>
+              <li class="nav_bar_item" :class="{ active: activeIndex === 2 }" @click="setActive(2)">
+                <div class="nav_icon_wrapper">
+                  <div
+                    class="icon icon-text d-flex flex-column"
+                    :class="{ 'shadow-icon': activeIndex === 2 }"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      fill="#ffedd5"
+                      class="bi bi-person-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+                      />
+                    </svg>
+                    <span class="fs-text-xs text-nowrap m-0 text-primary-100">我的小卡</span>
+                  </div>
+                </div>
+              </li>
+              <div
+                class="bgHalfGroove"
+                :style="{ transform: `translateX(calc(80px * ${activeIndex}))` }"
+              ></div>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

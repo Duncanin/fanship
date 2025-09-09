@@ -5,9 +5,13 @@
       <h5>等待飯友回應中⋯</h5>
       <img src="../assets/images/pairing_img/result-waiting.gif" alt="" />
     </div>
-    <router-link to="/PairingSuccess" class="btnA pairingChat">繼續聊天</router-link>
 
-    <a class="btnA pairingError" href="#">我們可能不適合做飯友</a>
+    <div>
+      <router-link to="/PairingSuccess" class="btnA pairingChat">繼續聊天</router-link>
+      <router-link to="/pairing-index" class="btnA pairingError">我們可能不適合做飯友</router-link>
+    </div>
+
+    <hr class="border-0 m-0" />
   </div>
 </template>
 <style>
