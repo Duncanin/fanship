@@ -351,10 +351,10 @@ import MainNavBarOther from '@/components/MainNavBarOther.vue';
       <div class="sticky-bottom">
         <MainNavBarOther />
       </div>
-      <div class="mt-spac-xl">
-        <div class="d-flex justify-content-center align-items-center">
+      <!-- <div class="mt-spac-xl">
+        <div class="d-flex justify-content-center align-items-center"> -->
           <!-- <MainNavBar /> -->
-          <div class="main-nav_bar bg-secondary-800 rounded-pill">
+          <!-- <div class="main-nav_bar bg-secondary-800 rounded-pill">
             <ul class="d-flex justify-content-between align-items-center py-spac-xs px-spac-5xl">
               <li class="nav_bar_item" :class="{ active: activeIndex === 0 }" @click="setActive(0)">
                 <div class="nav_icon_wrapper">
@@ -421,9 +421,9 @@ import MainNavBarOther from '@/components/MainNavBarOther.vue';
                 :style="{ transform: `translateX(calc(80px * ${activeIndex}))` }"
               ></div>
             </ul>
-          </div>
-        </div>
-      </div>
+          </div> -->
+        <!-- </div>
+      </div> -->
     </div>
   </div>
 </template>
