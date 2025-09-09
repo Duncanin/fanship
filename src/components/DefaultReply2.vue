@@ -126,7 +126,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import other01Img from '@/assets/images/pairing_img/anons/other01.png';
+import other01Img from '@/assets/images/pairing_img/anons/other01.webp';
 import self06Img from '@/assets/images/pairing_img/anons/self06.png';
 
 // 綁定的訊息

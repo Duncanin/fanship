@@ -17,7 +17,8 @@
 
           <img :src="homepageImg" alt="homepage" class="img-homepage mb-spac-m">
 
-          <MainNavBar />
+          <!-- <MainNavBar /> -->
+          <MainNavBarOther />
         </div>
       </div>
     </main>
@@ -26,8 +27,9 @@
 
 <script setup>
 import BgHeader from '../components/bg-header.vue';
-import MainNavBar from '../components/main-nav-bar.vue';
+// import MainNavBar from '../components/main-nav-bar.vue';
 import homepageImg from '@/assets/images/pairing_img/homepage.png';
+import MainNavBarOther from '@/components/MainNavBarOther.vue';
 </script>
 
 <style scoped>

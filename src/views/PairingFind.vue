@@ -10,7 +10,9 @@
           <p class="text-secondary-900 lh-h6 text-center mb-spac-5xl">
             我們正在安排一場美味的邂逅，<br>緣分悄悄加熱中 👀
           </p>
-          <img :src="matchingLoadingGif" alt="matching-loading" class="mb-spac-5xl">
+          <div class="gif-wrapper">
+            <img :src="matchingLoadingGif" alt="matching-loading" class="matching-gif mb-spac-5xl">
+          </div>
           <button type="button" class="btn btn-secondary-0 py-spac-m px-spac-xl text-secondary-700 fw-bold fs-5 lh-h5 rounded-full shadow-light btn-search"
           @click="cancelSearch"> 
             取消尋找
@@ -72,5 +74,16 @@ main {
 }
 main.fade-out {
   opacity: 0;                         
+}
+.gif-wrapper {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2); 
+}
+.matching-gif {
+  mix-blend-mode: multiply;
 }
 </style>
