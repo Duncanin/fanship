@@ -1,5 +1,5 @@
 <script setup>
-import MainNavBarOther from '@/components/MainNavBarOther.vue';
+import MainNavBarOther from '@/components/MainNavBarOther.vue'
 </script>
 
 <template>
@@ -347,14 +347,14 @@ import MainNavBarOther from '@/components/MainNavBarOther.vue';
           </div>
         </div>
       </div>
-      
-      <div class="sticky-bottom">
+
+      <div class="sticky-bottom mt-spac-xl" style="margin-bottom: -50px">
         <MainNavBarOther />
       </div>
       <!-- <div class="mt-spac-xl">
         <div class="d-flex justify-content-center align-items-center"> -->
-          <!-- <MainNavBar /> -->
-          <!-- <div class="main-nav_bar bg-secondary-800 rounded-pill">
+      <!-- <MainNavBar /> -->
+      <!-- <div class="main-nav_bar bg-secondary-800 rounded-pill">
             <ul class="d-flex justify-content-between align-items-center py-spac-xs px-spac-5xl">
               <li class="nav_bar_item" :class="{ active: activeIndex === 0 }" @click="setActive(0)">
                 <div class="nav_icon_wrapper">
@@ -422,11 +422,10 @@ import MainNavBarOther from '@/components/MainNavBarOther.vue';
               ></div>
             </ul>
           </div> -->
-        <!-- </div>
+      <!-- </div>
       </div> -->
     </div>
   </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
