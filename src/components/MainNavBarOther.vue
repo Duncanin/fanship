@@ -24,7 +24,7 @@
         <!-- <div class="bgHalfGroove"></div> -->
         <div class="nav_icon_wrapper">
           <div class="icon">
-            <img :src="milliImg" alt="milli" class="rounded-circle">
+            <img :src="milliImg" alt="milli" class="rounded-circle shadow-light">
           </div>
           <p class="nav-label">首頁</p>
         </div>
