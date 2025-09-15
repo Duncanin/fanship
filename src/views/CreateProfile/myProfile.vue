@@ -347,10 +347,7 @@ import MainNavBarOther from '@/components/MainNavBarOther.vue'
           </div>
         </div>
       </div>
-
-      <div class="sticky-bottom mt-spac-xl" style="margin-bottom: -50px">
-        <MainNavBarOther />
-      </div>
+      <MainNavBarOther class="sticky-bottom mt-spac-xl" style="margin-bottom: 10px" />
     </div>
   </div>
 </template>

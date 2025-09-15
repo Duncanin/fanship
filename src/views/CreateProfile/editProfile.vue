@@ -918,9 +918,7 @@ import MainNavBar from '@/components/MainNavBarOther.vue'
         </div>
       </div>
 
-      <div class="sticky-bottom mt-spac-xl" style="margin-bottom: -14px">
-        <MainNavBar />
-      </div>
+      <MainNavBar class="sticky-bottom mt-spac-xl" style="margin-bottom: 10px" />
     </div>
   </div>
 </template>
