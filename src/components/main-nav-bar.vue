@@ -119,7 +119,8 @@ ul,li {
 }
 .nav_bar_item.active .nav_icon_wrapper .icon {
   transform: translateY(-32px) scale(1.6);
-  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.1));
+  /* filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.1)); */
+  border: transparent;
 }
 /* 選中狀態下改變 SVG 顏色 */
 .nav_bar_item.active .icon svg path {

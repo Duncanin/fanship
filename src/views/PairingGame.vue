@@ -1,5 +1,5 @@
 <template>
-  <main class="bg-gradient-home">
+  <main class="bg-primary-50">
     <PairingMenu />
     <div class="container mt-spac-s">
       <!-- 進度條 -->
@@ -84,7 +84,7 @@ import { ref, onMounted, onUnmounted, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import PairingMenu from '../components/PairingMenu.vue';
 import DefaultReply2 from '../components/DefaultReply2.vue';
-import other01Img from '@/assets/images/pairing_img/anons/other01.png';
+import other01Img from '@/assets/images/pairing_img/anons/other01.webp';
 import self06Img from '@/assets/images/pairing_img/anons/self06.png';
 
 const router = useRouter();
@@ -95,7 +95,7 @@ const hasAnswered = ref(false);
 const userChoice = ref(null);
 const opponentChoice = ref(null);
 const isTimerActive = ref(false); // 控制計時器是否啟動
-const conversationKey = ref(0); // 用來重置對話組件
+const conversationKey = ref(0); // 用來重置對話
 let timer = null;
 
 // 問題資料

@@ -1,8 +1,8 @@
 <template>
-  <div class="main-nav_bar bg-secondary-800 rounded-pill">
+  <div class="main-nav_bar nav-bar-img">
     <ul class="d-flex justify-content-between align-items-center py-spac-s px-spac-5xl">
       <li class="nav_bar_item"
-        :class="{ active: activeIndex === 0, hideLabel: activeIndex === 1 }"
+        :class="{ active: activeIndex === 0, hideLabel: activeIndex === 2 }"
         @click="setActive(0)" >
         <div class="nav_icon_wrapper">
           <div class="icon icon-chat">
@@ -17,20 +17,22 @@
         </div>
       </li>
       <!-- 首頁 -->
-      <li class="nav_bar_item milli-w-cus mx-spac-4xl home-item">
+      <li class="nav_bar_item milli-w-cus mx-spac-4xl home-item"
+      :class="{ active: activeIndex === 1}"
+        @click="setActive(1)" >
         <!-- 固定凹槽 -->
-        <div class="bgHalfGroove"></div>
+        <!-- <div class="bgHalfGroove"></div> -->
         <div class="nav_icon_wrapper">
           <div class="icon">
-            <img :src="milliImg" alt="milli" class="rounded-circle">
+            <img :src="milliImg" alt="milli" class="rounded-circle shadow-light">
           </div>
           <p class="nav-label">首頁</p>
         </div>
         
       </li>
       <li class="nav_bar_item"
-        :class="{ active: activeIndex === 1, hideLabel: activeIndex === 0 }"
-        @click="setActive(1)">
+        :class="{ active: activeIndex === 2, hideLabel: activeIndex === 0 }"
+        @click="setActive(2)">
         <div class="nav_icon_wrapper">
           <div class="icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#ffedd5" class="bi bi-person-fill" viewBox="0 0 16 16">
@@ -46,47 +48,58 @@
 
 <script setup>
 import { ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
-import milliImg from '@/assets/images/navigationBtn/milli.png';
+import { useRouter, useRoute } from 'vue-router'
+import milliImg from '@/assets/images/navigationBtn/milli.png'
 
+const activeIndex = ref(-1)
+const router = useRouter()
 const route = useRoute()
-// 預設沒有選中項目
-const activeIndex = ref(-1) 
-
-// 判斷切換到的頁面 icon active 狀態
-function setActiveByRoute(path) {
-  if (path.startsWith('/ChatRoom')) {
-    activeIndex.value = 0
-  } else if (path.startsWith('/myProfile')) {
-    activeIndex.value = 1
-  } else {
-    activeIndex.value = -1
-  }
-}
-
-// 初始化
-setActiveByRoute(route.path)
-
-// 更新 active 狀態
-watch(
-  () => route.path,
-  (newPath) => {
-    setActiveByRoute(newPath)
-  }
-)
 
 function setActive(index) {
   activeIndex.value = index
+  if (index === 0) {
+    router.push('/ChatRoom')
+  } else if (index === 1) {
+    router.push('/pairing-index')
+  }
+  else if (index === 2) {
+    router.push('/myProfile')
+  }
 }
+
+//  activeIndex 與當前路徑一致
+watch(
+  () => route.path,
+  (newPath) => {
+    if (newPath === '/ChatRoom') {
+      activeIndex.value = 0
+    } else if (newPath === '/pairing-index') {
+      activeIndex.value = 1
+    } else if (newPath === '/myProfile') {
+      activeIndex.value = 2
+    } else {
+      activeIndex.value = -1
+    }
+  },
+  { immediate: true }
+)
 </script>
 
 <style scoped>
+.nav-bar-img {
+  background-image: url("@/assets/images/navigationBtn/Subtract.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 .main-nav_bar {
+  margin: 0 auto;
   margin-bottom: 64px;
   position: relative;
   height: 64px;
   width: 100%;
   min-width: 325px;
+  max-width: 375px;
 }
 .nav_bar_item {
   position: relative;
@@ -130,8 +143,7 @@ function setActive(index) {
 }
 /* 首頁 固定放大效果 */
 .home-item .nav_icon_wrapper .icon {
-  transform: translateY(-28px) scale(1.6);
-  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.1));
+  transform: translateY(-28px) scale(1.6);;
 }
 .home-item .nav-label {
   opacity: 0;
@@ -146,16 +158,20 @@ function setActive(index) {
 .nav_bar_item.active .icon svg {
   fill: #FDB468;
 }
- /* 保持圓點顏色不變 */
 .nav_bar_item.active .icon svg circle {
-  fill: #454545;
+  fill: #454545; /* 保持圓點顏色不變 */
 }
 /* 點選左右 icon 隱藏另外一邊文字 */
 .hideLabel .nav-label {
   opacity: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* 避免空白 */
+  transition: all 0.3s ease;
 }
 /* 固定凹槽樣式 */
-.bgHalfGroove {
+/* .bgHalfGroove {
   position: absolute;
   top: -40px;
   left: 50%;
@@ -191,5 +207,5 @@ function setActive(index) {
   background: transparent;
   border-top-left-radius: 35px;
   box-shadow: -1px -15px 0 #FFF;
-}
-</style>
+}*/
+</style> 

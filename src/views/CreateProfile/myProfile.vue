@@ -1,11 +1,5 @@
 <script setup>
-import { ref } from 'vue'
-import milliImg from '@/assets/images/navigationBtn/milli.png'
-const activeIndex = ref(1)
-
-function setActive(index) {
-  activeIndex.value = index
-}
+import MainNavBarOther from '@/components/MainNavBarOther.vue';
 </script>
 
 <template>
@@ -353,11 +347,14 @@ function setActive(index) {
           </div>
         </div>
       </div>
-
-      <div class="mt-spac-xl">
-        <div class="d-flex justify-content-center align-items-center">
+      
+      <div class="sticky-bottom">
+        <MainNavBarOther />
+      </div>
+      <!-- <div class="mt-spac-xl">
+        <div class="d-flex justify-content-center align-items-center"> -->
           <!-- <MainNavBar /> -->
-          <div class="main-nav_bar bg-secondary-800 rounded-pill">
+          <!-- <div class="main-nav_bar bg-secondary-800 rounded-pill">
             <ul class="d-flex justify-content-between align-items-center py-spac-xs px-spac-5xl">
               <li class="nav_bar_item" :class="{ active: activeIndex === 0 }" @click="setActive(0)">
                 <div class="nav_icon_wrapper">
@@ -424,110 +421,12 @@ function setActive(index) {
                 :style="{ transform: `translateX(calc(80px * ${activeIndex}))` }"
               ></div>
             </ul>
-          </div>
-        </div>
-      </div>
+          </div> -->
+        <!-- </div>
+      </div> -->
     </div>
-      
   </div>
 </template>
 
 <style scoped>
-ul,
-li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.nav_bar_item.active .icon,
-.nav_bar_item.active .icon svg path,
-.nav_bar_item.active .icon img,
-.nav_bar_item.active .icon span {
-  color: #fdb468 !important;
-  fill: #fdb468;
-}
-.main-nav_bar {
-  margin-bottom: 64px;
-  position: relative;
-  height: auto;
-  min-height: 64px;
-}
-.nav_bar_item {
-  position: relative;
-  z-index: 1;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-}
-.nav_icon_wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.icon svg,
-.icon img {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  transition: 0.5s;
-}
-.icon-text svg {
-  width: 32px;
-  height: 32px;
-  margin-left: 5px;
-}
-.nav_bar_item.active .nav_icon_wrapper .icon svg,
-.nav_bar_item.active .nav_icon_wrapper .icon img {
-  transform: translateY(-32px) scale(1.6);
-}
-.nav_bar_item.active .nav_icon_wrapper .icon span {
-  transform: translateY(-22px) scale(1.3);
-}
-
-.nav_bar_item .icon {
-  position: relative;
-}
-
-.primary-gradient {
-  background: linear-gradient(to bottom, var(--bs-primary-50) 100%, var(--bs-primary-100) 100%);
-}
-.shadow-icon {
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.16)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-}
-.bgHalfGroove {
-  position: absolute;
-  top: -55%;
-  left: 9%;
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(to bottom, transparent 30%, #fff7ed 30%);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease;
-}
-.bgHalfGroove::before {
-  content: '';
-  position: absolute;
-  top: 43%;
-  left: -31px;
-  width: 35px;
-  height: 30px;
-  background: transparent;
-  border-top-right-radius: 30px;
-  box-shadow: 1px -12px 0 #fff7ed;
-}
-.bgHalfGroove::after {
-  content: '';
-  position: absolute;
-  top: 43%;
-  right: -31px;
-  width: 35px;
-  height: 30px;
-  background: transparent;
-  border-top-left-radius: 30px;
-  box-shadow: -1px -12px 0 #fff7ed;
-}
 </style>

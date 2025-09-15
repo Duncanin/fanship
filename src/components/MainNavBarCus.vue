@@ -35,7 +35,7 @@
               <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
             </svg>
           </div>
-          <p class="nav-label">個人資料</p>
+          <p class="nav-label">我的小卡</p>
         </div>
       </li>
       <div class="bgHalfGroove" 

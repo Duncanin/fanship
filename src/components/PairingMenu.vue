@@ -1,5 +1,5 @@
 <template>
-  <div class="container pairingMenu-spacer mb-spac-s">
+  <div class="container pairingMenu-spacer mb-spac-s bg-primary-50">
     <div class="row">
       <div class="col-12 d-flex justify-content-between align-items-center">
         <button type="button" class="btn btn-none border-0 py-0 px-0 btn-modal-box-shadow" data-bs-toggle="modal" data-bs-target="#staticBackdrop">

@@ -37,8 +37,7 @@
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import BgHeader from '../components/bg-header.vue';
-import other01Img from '@/assets/images/pairing_img/anons/other01.png';
-
+import other01Img from '@/assets/images/pairing_img/anons/other01.webp';
 const router = useRouter();
 const titleFaded = ref(false);
 const avatarVisible = ref(false);

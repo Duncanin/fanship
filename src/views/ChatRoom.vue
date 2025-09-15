@@ -1,3 +1,7 @@
+<script>
+
+</script>
+
 <template>
   <div class="container">
     <h6 class="fs-6 text-center fw-bold bg-primary-50 pt-spac-5xl pb-17 mb-spac-s">聊天室</h6>
