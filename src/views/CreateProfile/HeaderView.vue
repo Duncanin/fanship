@@ -9,10 +9,10 @@ const goBack = () => {
 <template>
   <div class="bg-primary-100 profileHeader">
     <div class="container">
-      <h1 class="fs-6 text-center text-primary position-relative pt-1 pb-3">
+      <h1 class="fs-6 text-center text-primary position-relative pt-spac-s pb-3">
         <button
           type="button"
-          class="border-0 bg-primary-100 p-0 position-absolute top-0 start-0 text-secondary-700"
+          class="border-0 bg-primary-100 p-0 position-absolute top-50 start-0 translate-middle-y text-secondary-700"
           @click="goBack"
         >
           <svg
