@@ -9,7 +9,7 @@
     <ul class="d-flex list-unstyled mb-spac-s">
       <li class="me-spac-s d-flex flex-column justify-content-end align-items-center">
         <p
-          class="px-spac-s py-spac-m bg-primary-50 rounded-s fw-medium text-secondary-400 fs-text-xs"
+          class="px-spac-s py-spac-m bg-primary-50 rounded-s fw-medium text-secondary-400 fs-text-xs thinking"
         >
           在想什麼?
         </p>
@@ -268,10 +268,10 @@
   width: 16px;
   height: 16px;
 }
-* {
+/* * {
   outline: 1px solid pink;
-}
+} */
 </style>
 <script setup>
-import MainNavBar from '../components/main-nav-bar.vue'
+import MainNavBar from '../components/MainNavBarOther.vue'
 </script>
