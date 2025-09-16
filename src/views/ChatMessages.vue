@@ -8,6 +8,7 @@
             class="btn btn-none border-0 py-0 px-0 btn-modal-box-shadow"
             data-bs-toggle="modal"
             data-bs-target="#staticBackdrop"
+            @click="$router.push({path:'/ChatRoom'})"
           >
             <img class="wh32" src="..\assets\images\chatRoom\back.png" alt="back" />
           </button>
@@ -150,4 +151,5 @@
 </style>
 
 <script setup>
+
 </script>
