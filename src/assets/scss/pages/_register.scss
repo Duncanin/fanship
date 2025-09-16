@@ -53,3 +53,10 @@
     }
   }
 }
+.primary-gradient {
+  background: linear-gradient(
+    to bottom,
+    var(--bs-primary-50) calc(100% - 100px),
+    var(--bs-primary-100)
+  );
+}

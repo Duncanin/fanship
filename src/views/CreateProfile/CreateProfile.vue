@@ -44,7 +44,7 @@ function onSubmit() {
 </script>
 
 <template>
-  <Header class="" />
+  <Header class="sticky-top" />
   <div class="container">
     <div class="py-spac-l d-flex flex-column gap-spac-m">
       <!-- 進度條 -->
@@ -155,7 +155,7 @@ function onSubmit() {
       </form>
     </div>
   </div>
-  <div class="border-top border-primary border-opacity-10 pt-spac-l bg-white sticky-bottom">
+  <div class="border-top border-primary border-opacity-10 pt-spac-l bg-white fiexd-bottom">
     <div class="container">
       <button
         type="submit"
@@ -165,6 +165,7 @@ function onSubmit() {
       >
         下一步
       </button>
+      <hr class="border-0" />
     </div>
   </div>
 </template>
