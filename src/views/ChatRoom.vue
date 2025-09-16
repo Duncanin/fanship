@@ -1,12 +1,12 @@
 <script>
-
 </script>
 
 <template>
   <div class="container">
     <h6 class="fs-6 text-center fw-bold bg-primary-50 pt-spac-5xl pb-17 mb-spac-s">聊天室</h6>
-    <input type="text" class="form-control mb-spac-s " id="typeText" placeholder="搜尋" />
-    <ul class="d-flex list-unstyled mb-spac-s">
+    <input type="text" class="form-control mb-spac-s" id="typeText" placeholder="搜尋" />
+
+    <!-- <ul class="d-flex list-unstyled mb-spac-s">
       <li class="me-spac-s d-flex flex-column justify-content-end align-items-center">
         <p
           class="px-spac-s py-spac-m bg-primary-50 rounded-s fw-medium text-secondary-400 fs-text-xs thinking"
@@ -59,7 +59,69 @@
         />
         <p class="text-center text-secondary-900 fs-text-xs">Jason</p>
       </li>
-    </ul>
+    </ul> -->
+
+    <swiper
+      :slidesPerView="3.5"
+      :spaceBetween="30"
+      :freeMode="true"
+      :modules="modules"
+      class="mySwiper"
+    >
+      <swiper-slide class=" d-flex flex-column justify-content-end align-items-center w80"
+        ><p
+          class="px-spac-s py-spac-m bg-primary-50 rounded-s fw-medium text-secondary-400 fs-text-xs thinking"
+        >
+          在想什麼?
+        </p>
+        <img
+          class="rounded-full iconwh60 mt-20"
+          src="..\assets\images\chatRoom\喔嚕嚕.png"
+          alt="icon"
+        />
+        <p class="text-center text-secondary-400 fs-text-xs">建立便條</p>
+        </swiper-slide>
+      <swiper-slide class=" d-flex flex-column justify-content-end align-items-center w80">
+        <p
+          class="px-spac-s py-spac-m bg-primary-50 rounded-s fw-medium text-secondary-900 thinking fs-text-xs"
+        >
+          好餓喔好餓喔好餓喔
+        </p>
+        <img
+          class="rounded-full iconwh60 mt-20"
+          src="..\assets\images\chatRoom\sasa.png"
+          alt="icon"
+        />
+        <p class="text-center text-secondary-900 fs-text-xs">莎莎</p>
+        </swiper-slide>
+      <swiper-slide class=" d-flex flex-column justify-content-end align-items-center w80">
+        <p
+          class="px-spac-s py-spac-m bg-primary-50 rounded-s fw-medium text-secondary-900 thinking fs-text-xs"
+        >
+          今天去 101 新開幕的景觀餐廳探...
+        </p>
+        <img
+          class="rounded-full iconwh60 mt-20"
+          src="..\assets\images\chatRoom\ben.png"
+          alt="icon"
+        />
+        <p class="text-center text-secondary-900 fs-text-xs">Ben</p>
+        </swiper-slide>
+      <swiper-slide class=" d-flex flex-column justify-content-end align-items-center w80">
+        <p
+          class="px-spac-s py-spac-m bg-primary-50 rounded-s fw-medium text-secondary-900 thinking fs-text-xs"
+        >
+          未知的首爾好好看
+        </p>
+        <img
+          class="rounded-full iconwh60 mt-20"
+          src="..\assets\images\chatRoom\jason.png"
+          alt="icon"
+        />
+        <p class="text-center text-secondary-900 fs-text-xs">Jason</p>
+        </swiper-slide>
+    </swiper>
+
     <ul class="list-unstyled">
       <li>
         <router-link to="/ChatMessages" class="d-flex flex-row align-items-center textbox">
@@ -124,7 +186,9 @@
               <p class="fs-text-xs text-secondary-300 mb-0">4:22 PM</p>
             </div>
             <div class="d-flex justify-content-between">
-              <p class="fw-blod message fs-text-sm text-secondary-400 mb-0 me-spac-s">不可能吧！我不相信！</p>
+              <p class="fw-blod message fs-text-sm text-secondary-400 mb-0 me-spac-s">
+                不可能吧！我不相信！
+              </p>
               <p
                 class="fs-text-sm bg-primary-400 rounded-full text-white wh20 text-center invisible me-spac-xs mb-0"
               >
@@ -153,12 +217,14 @@
             </svg>
           </div>
           <div class="userMessage">
-            <div class="d-flex justify-content-between  align-items-center">
+            <div class="d-flex justify-content-between align-items-center">
               <p class="fw-blod fs-text-lg mb-0">Jason</p>
               <p class="fs-text-xs text-secondary-300 mb-0">2:10 PM</p>
             </div>
             <div class="d-flex justify-content-between">
-              <p class="fw-blod message fs-text-sm mb-0 me-spac-s">哈哈哈哈哈哈哈哈哈哈哈哈哈超好笑</p>
+              <p class="fw-blod message fs-text-sm mb-0 me-spac-s">
+                哈哈哈哈哈哈哈哈哈哈哈哈哈超好笑
+              </p>
               <p
                 class="fs-text-sm bg-primary-400 rounded-full text-white wh20 text-center me-spac-xs mb-0"
               >
@@ -174,13 +240,15 @@
           <div class="userIcon me-spac-s">
             <img class="rounded-full" src="..\assets\images\pairing_img\m-pfp2.png" alt="icon" />
           </div>
-          <div class="userMessage ">
+          <div class="userMessage">
             <div class="d-flex justify-content-between align-items-center">
               <p class="fw-blod fs-text-lg mb-0">陽光宅男</p>
               <p class="fs-text-xs text-secondary-300 mb-0">1:04 PM</p>
             </div>
             <div class="d-flex justify-content-between">
-              <p class="fw-blod message fs-text-sm text-secondary-400 mb-0 me-spac-s">你家的貓會滾幾圈？</p>
+              <p class="fw-blod message fs-text-sm text-secondary-400 mb-0 me-spac-s">
+                你家的貓會滾幾圈？
+              </p>
               <p
                 class="fs-text-sm bg-primary-400 rounded-full text-white wh20 text-center invisible me-spac-xs mb-0"
               >
@@ -195,13 +263,15 @@
           <div class="userIcon me-spac-s">
             <img class="rounded-full" src="..\assets\images\chatRoom\ben.png" alt="icon" />
           </div>
-          <div class="userMessage ">
+          <div class="userMessage">
             <div class="d-flex justify-content-between align-items-center">
               <p class="fw-blod fs-text-lg mb-0">Ben</p>
               <p class="fs-text-xs text-secondary-300 mb-0">10:21 AM</p>
             </div>
             <div class="d-flex justify-content-between">
-              <p class="fw-blod message fs-text-sm text-secondary-400 mb-0 me-spac-s">Ben 已成為飯友</p>
+              <p class="fw-blod message fs-text-sm text-secondary-400 mb-0 me-spac-s">
+                Ben 已成為飯友
+              </p>
               <p
                 class="fs-text-sm bg-primary-400 rounded-full text-white wh20 text-center invisible me-spac-xs mb-0"
               >
@@ -268,10 +338,37 @@
   width: 16px;
   height: 16px;
 }
+.w80{
+  width: 80px;
+}
 /* * {
   outline: 1px solid pink;
 } */
 </style>
 <script setup>
 import MainNavBar from '../components/MainNavBarOther.vue'
+</script>
+
+<script>
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from 'swiper/vue'
+// Import Swiper styles
+import 'swiper/css'
+
+import 'swiper/css/free-mode'
+import 'swiper/css/pagination'
+// import required modules
+import { FreeMode } from 'swiper/modules'
+
+export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    return {
+      modules: [FreeMode],
+    }
+  },
+}
 </script>
