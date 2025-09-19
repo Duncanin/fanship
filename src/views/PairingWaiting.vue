@@ -7,7 +7,7 @@
     </div>
 
     <div>
-      <router-link to="/PairingSuccess" class="btnA pairingChat">繼續聊天</router-link>
+      <router-link to="/PairingSuccess" class="btnA pairingChat bg-secondary-400">繼續聊天</router-link>
       <router-link to="/pairing-index" class="btnA pairingError">我們可能不適合做飯友</router-link>
     </div>
 

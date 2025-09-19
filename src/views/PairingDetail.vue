@@ -15,8 +15,8 @@
           xmlns="http://www.w3.org/2000/svg"
           width="16"
           height="16"
-          fill="#fb923c"
-          class="bi bi-star-fill"
+          fill="#f6d74e"
+          class="bi bi-star-fill me-spac-xxs"
           viewBox="0 0 16 16"
         >
           <path
@@ -27,8 +27,8 @@
           xmlns="http://www.w3.org/2000/svg"
           width="16"
           height="16"
-          fill="#fb923c"
-          class="bi bi-star-fill"
+          fill="#f6d74e"
+          class="bi bi-star-fill me-spac-xxs"
           viewBox="0 0 16 16"
         >
           <path
@@ -39,7 +39,7 @@
           width="16"
           height="16"
           fill="#E7E7E7"
-          class="bi bi-star-fill"
+          class="bi bi-star-fill me-spac-xxs"
           viewBox="0 0 16 16"
         >
           <path
@@ -50,7 +50,7 @@
           width="16"
           height="16"
           fill="#E7E7E7"
-          class="bi bi-star-fill"
+          class="bi bi-star-fill me-spac-xxs"
           viewBox="0 0 16 16"
         >
           <path
