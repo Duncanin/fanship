@@ -3,8 +3,10 @@ import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import Header from './HeaderView.vue'
 
-import { ElDatePicker } from 'element-plus'
+import { ElDatePicker, ElSelect, ElOption, ElInput } from 'element-plus'
 import 'element-plus/dist/index.css'
+
+import CalendarIcon from '@/components/icons/CalendarIcon.vue'
 
 // form state
 const nickname = ref('')
@@ -41,10 +43,40 @@ function onSubmit() {
     window.scrollTo(0, 0)
   })
 }
+
+const genderOptions = [
+  { value: '', label: '請選擇性別', disabled: true },
+  { value: 'female', label: '女' },
+  { value: 'male', label: '男' },
+  { value: 'other', label: '非二元性別' },
+]
+const regions = [
+  { value: '', label: '請選擇地區', disabled: true },
+  { value: 'TaipeiCounty', label: '台北市' },
+  { value: 'NewTaipei', label: '新北市' },
+  { value: 'Keelong', label: '基隆縣' },
+  { value: 'Taoyuan', label: '桃園市' },
+  { value: 'Hsinchu', label: '新竹縣' },
+  { value: 'Miaoli', label: '苗栗縣' },
+  { value: 'Taichung', label: '台中市' },
+  { value: 'Changhua', label: '彰化縣' },
+  { value: 'Nantou', label: '南投縣' },
+  { value: 'Yunlin', label: '雲林縣' },
+  { value: 'Chiayi', label: '嘉義縣' },
+  { value: 'Tainan', label: '台南縣' },
+  { value: 'Kaohsiung', label: '高雄市' },
+  { value: 'Pingtung', label: '屏東縣' },
+  { value: 'Taitung', label: '台東縣' },
+  { value: 'Hualien', label: '花蓮縣' },
+  { value: 'Yilan', label: '宜蘭縣' },
+  { value: 'Penghu', label: '澎湖縣' },
+  { value: 'Kinmen', label: '金門縣' },
+  { value: 'Lienchiang', label: '連江縣' },
+]
 </script>
 
 <template>
-  <Header class="sticky-top" />
+  <Header class="sticky-top" :back-path="'/login'" />
   <div class="container">
     <div class="py-spac-l d-flex flex-column gap-spac-m">
       <!-- 進度條 -->
@@ -69,48 +101,41 @@ function onSubmit() {
       </h2>
 
       <form novalidate @submit.prevent="onSubmit">
-        <!-- 暱稱 -->
-        <div class="">
-          <label class="form-label ms-2">暱稱</label>
-          <input
-            type="text"
-            class="form-control rounded-pill py-2"
-            :class="{ 'is-invalid': nickname && !isNicknameValid }"
-            :maxlength="NICK_MAX"
+        <div>
+          <label class="form-label ms-2 fw-bold">暱稱</label>
+          <el-input
+            v-model="nickname"
+            maxlength="15"
+            show-word-limit
             placeholder="輸入項目"
-            v-model.trim="nickname"
+            class="rounded-pill"
+            :class="{ 'is-invalid': nickname && !isNicknameValid, 'has-value': userInput }"
           />
           <div class="fs-text-sm text-end pt-spac-tiny text-secondary-500">
             {{ nickname.length }}/{{ NICK_MAX }}
           </div>
-          <div class="invalid-feedback">請輸入 1–{{ NICK_MAX }} 個字元的暱稱</div>
+          <div v-if="nickname && !isNicknameValid" class="invalid-feedback">
+            請輸入 1–{{ NICK_MAX }} 個字元的暱稱
+          </div>
         </div>
 
         <!-- 性別 -->
         <div class="mb-3">
-          <label class="form-label ms-2">性別</label>
-          <select
-            class="form-select rounded-pill py-2 shadow-none"
-            v-model="gender"
-            :class="gender ? 'text-primary' : 'text-secondary-400'"
-          >
-            <option value="" class="d-none" disabled>請選擇性別</option>
-            <option value="female">女</option>
-            <option value="male">男</option>
-            <option value="other">非二元性別</option>
-          </select>
+          <label class="form-label ms-2 fw-bold">性別</label>
+          <el-select v-model="gender" class="rounded-pill" placeholder="請選擇性別">
+            <el-option
+              v-for="item in genderOptions"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+              :disabled="item.disabled || false"
+            />
+          </el-select>
         </div>
 
         <!-- 生日 -->
-        <div class="mb-3">
-          <label class="form-label ms-2">生日</label>
-          <!-- <input
-            type="date"
-            class="form-control rounded-pill pe-spac-m py-2"
-            v-model="birthday"
-            :class="birthday ? 'text-primary' : 'text-secondary-400'"
-            placeholder="請選擇生日"
-          /> -->
+        <div class="mb-4">
+          <label class="form-label ms-2 fw-bold">生日</label>
           <el-date-picker
             v-model="birthday"
             type="date"
@@ -118,44 +143,27 @@ function onSubmit() {
             format="YYYY-MM-DD"
             value-format="YYYY-MM-DD"
             class="d-block birthday-cus"
+            :prefix-icon="CalendarIcon"
           />
         </div>
 
         <!-- 地區 -->
-        <div class="mb-4">
-          <label class="form-label ms-2">地區</label>
-          <select
-            class="form-select rounded-pill py-2 shadow-none"
-            v-model="region"
-            :class="region ? 'text-primary' : 'text-secondary-400'"
-          >
-            <option value="" disabled>請選擇地區</option>
-            <option value="TaipeiCounty">台北市</option>
-            <option value="NewTaipei">新北市</option>
-            <option value="Keelong">基隆市</option>
-            <option value="Taoyuan">桃園</option>
-            <option value="Hsinchu">新竹</option>
-            <option value="Miaoli">苗栗</option>
-            <option value="Taichung">台中市</option>
-            <option value="Changhua">彰化</option>
-            <option value="Nantou">南投</option>
-            <option value="Yunlin">雲林</option>
-            <option value="Chiayi">嘉義</option>
-            <option value="Tainan">台南</option>
-            <option value="Kaohsiung">高雄</option>
-            <option value="Pingtung">屏東</option>
-            <option value="Taitung">台東</option>
-            <option value="Hualien">花蓮</option>
-            <option value="Yilan">宜蘭</option>
-            <option value="Penghu">澎湖</option>
-            <option value="Kinmen">金門</option>
-            <option value="Lienchiang">連江</option>
-          </select>
+        <div class="mb-spac-3xl">
+          <label class="form-label ms-2 fw-bold">地區</label>
+          <el-select v-model="region" placeholder="請選擇地區" filterable>
+            <el-option
+              v-for="option in regions"
+              :key="option.value"
+              :label="option.label"
+              :value="option.value"
+              :disabled="option.disabled || false"
+            />
+          </el-select>
         </div>
       </form>
     </div>
   </div>
-  <div class="border-top border-primary border-opacity-10 pt-spac-l bg-white fiexd-bottom">
+  <div class="border-top border-primary border-opacity-10 py-spac-l bg-white sticky-bottom">
     <div class="container">
       <button
         type="submit"
@@ -165,43 +173,124 @@ function onSubmit() {
       >
         下一步
       </button>
-      <hr class="border-0" />
     </div>
   </div>
 </template>
 
-<style>
-.el-input {
-  width: 100%;
+<style scoped>
+::v-deep(span) {
+  color: var(--bs-primary);
 }
-.el-input__wrapper {
-  background-color: #f3f3f3;
-  border-radius: 9999px;
-  border: none;
-  box-shadow: none;
+::v-deep(.el-select__selected-item span) {
+  margin: 0;
+}
+
+::v-deep(.el-input__suffix) {
+  display: none;
+}
+
+::v-deep(.el-input__wrapper) {
   flex-direction: row-reverse;
-  width: 100%;
-  font-size: 16px;
-  background: #efefef;
-  padding: 0;
-  span {
-    margin-left: 8px;
-  }
-  padding: 5px 0;
 }
-.el-input__inner::placeholder {
-  color: var(--bs-secondary-400);
+::v-deep(.el-input),
+::v-deep(.el-input__wrapper) {
+  width: 100%;
+}
+
+::v-deep(.el-input__wrapper),
+::v-deep(.is-hovering) {
+  box-shadow: unset;
+  border: none;
+  background-color: var(--bs-secondary-50);
+  border-radius: 24px;
+  height: 40px;
+  font-size: 16px;
+}
+
+::v-deep(.el-select__input) {
+  box-shadow: unset;
+  border-radius: 24px;
+  height: 40px;
+  font-size: 16px;
   font-weight: 500;
 }
-.birthday-cus.el-date-editor.el-input,
-.birthday-cus .el-input,
-.birthday-cus .el-input__wrapper {
-  width: 100% !important;
+
+::v-deep(.el-input__inner::placeholder) {
+  color: var(--bs-secondary-400);
+  font-weight: 500;
+  font-size: 16px;
 }
+
+::v-deep(.el-input__inner) {
+  color: var(--bs-primary);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+::v-deep(.el-select__wrapper) {
+  box-shadow: unset;
+  background: var(--bs-secondary-50);
+  border-radius: 24px;
+  height: 40px;
+  font-size: 16px;
+}
+/* 1. 沒選值時（placeholder） */
+::v-deep(.is-transparent span) {
+  color: var(--bs-secondary-400);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+::v-deep(.el-select__suffix .el-icon) {
+  font-size: 24px;
+  width: 16px;
+  height: 10px;
+  color: var(--bs-secondary-500);
+}
+</style>
+<style>
 .el-icon {
-  color: #6d6d6d;
+  margin-right: 9px;
+  width: 24px;
+  height: 24px;
 }
-.el-input__prefix {
-  margin-right: 8px;
+.el-input__icon {
+  svg {
+    width: 18px;
+    height: 20px;
+  }
+  margin-right: 0px;
+}
+.el-popper {
+  border-radius: 16px;
+  overflow: hidden;
+  .is-disabled {
+    display: none;
+  }
+  .el-select-dropdown__list {
+    padding: 0;
+  }
+}
+.el-select-dropdown__item {
+  height: 46px;
+  padding: 0px 16px;
+  font-size: 16px;
+  box-sizing: content-box;
+  display: flex;
+  text-align: left;
+  align-items: center;
+  span {
+    margin: 0;
+  }
+  &.active,
+  &:active {
+    background-color: #1b1b1b1a;
+  }
+}
+.el-select-dropdown__item.is-hovering,
+.is-hovering,
+.el-select-dropdown__item.is-selected,
+.is-selected {
+  background-color: #1b1b1b1a;
 }
 </style>
