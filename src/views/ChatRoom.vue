@@ -1,10 +1,7 @@
-<script>
-</script>
-
 <template>
+  <h6 class="fs-6 text-center fw-bold bg-primary-50 pt-spac-5xl pb-17 mb-spac-s">聊天室</h6>
   <div class="container">
-    <h6 class="fs-6 text-center fw-bold bg-primary-50 pt-spac-5xl pb-17 mb-spac-s">聊天室</h6>
-    <input type="text" class="form-control mb-spac-s" id="typeText" placeholder="搜尋" />
+    <input type="text" class="form-control mb-spac-s input-group input-group-sm" id="typeText"  placeholder="搜尋"/>
 
     <!-- <ul class="d-flex list-unstyled mb-spac-s">
       <li class="me-spac-s d-flex flex-column justify-content-end align-items-center">
@@ -68,7 +65,7 @@
       :modules="modules"
       class="mySwiper"
     >
-      <swiper-slide class=" d-flex flex-column justify-content-end align-items-center w80"
+      <swiper-slide class="d-flex flex-column justify-content-end align-items-center w80 h180"
         ><p
           class="px-spac-s py-spac-m bg-primary-50 rounded-s fw-medium text-secondary-400 fs-text-xs thinking"
         >
@@ -80,8 +77,8 @@
           alt="icon"
         />
         <p class="text-center text-secondary-400 fs-text-xs">建立便條</p>
-        </swiper-slide>
-      <swiper-slide class=" d-flex flex-column justify-content-end align-items-center w80">
+      </swiper-slide>
+      <swiper-slide class="d-flex flex-column justify-content-end align-items-center w80 h180">
         <p
           class="px-spac-s py-spac-m bg-primary-50 rounded-s fw-medium text-secondary-900 thinking fs-text-xs"
         >
@@ -93,8 +90,8 @@
           alt="icon"
         />
         <p class="text-center text-secondary-900 fs-text-xs">莎莎</p>
-        </swiper-slide>
-      <swiper-slide class=" d-flex flex-column justify-content-end align-items-center w80">
+      </swiper-slide>
+      <swiper-slide class="d-flex flex-column justify-content-end align-items-center w80 h180">
         <p
           class="px-spac-s py-spac-m bg-primary-50 rounded-s fw-medium text-secondary-900 thinking fs-text-xs"
         >
@@ -106,8 +103,8 @@
           alt="icon"
         />
         <p class="text-center text-secondary-900 fs-text-xs">Ben</p>
-        </swiper-slide>
-      <swiper-slide class=" d-flex flex-column justify-content-end align-items-center w80">
+      </swiper-slide>
+      <swiper-slide class="d-flex flex-column justify-content-end align-items-center w80 h180">
         <p
           class="px-spac-s py-spac-m bg-primary-50 rounded-s fw-medium text-secondary-900 thinking fs-text-xs"
         >
@@ -119,12 +116,12 @@
           alt="icon"
         />
         <p class="text-center text-secondary-900 fs-text-xs">Jason</p>
-        </swiper-slide>
+      </swiper-slide>
     </swiper>
 
     <ul class="list-unstyled">
-      <li>
-        <router-link to="/ChatMessages" class="d-flex flex-row align-items-center textbox">
+      <li >
+        <router-link to="/ChatMessages" class="d-flex flex-row align-items-center textbox d-block">
           <div class="userIcon me-spac-s">
             <img class="rounded-full" src="..\assets\images\chatRoom\sasa.png" alt="icon" />
             <svg
@@ -141,16 +138,16 @@
             </svg>
           </div>
           <div class="userMessage">
-            <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-between align-items-center ">
               <p class="fw-blod fs-text-lg mb-0">莎莎</p>
               <p class="fs-text-xs text-secondary-300 mb-0">6:10 PM</p>
             </div>
-            <div class="d-flex justify-content-between">
-              <p class="fw-blod message fs-text-sm me-spac-s mb-0">
+            <div class="d-flex justify-content-between ">
+              <p class="fw-blod message fs-text-sm mb-0 ">
                 看來也是每天要注射咖啡因的捧友！看來也是每天要注射咖啡因的捧友！看來也是每天要注射咖啡因的捧友！
               </p>
               <p
-                class="fs-text-sm bg-primary-400 rounded-full text-white wh20 text-center me-spac-xs mb-0"
+                class="fs-text-sm bg-primary-400 rounded-full text-white wh20 text-center mb-0 me-spac-xs"
               >
                 3
               </p>
@@ -159,8 +156,8 @@
         </router-link>
       </li>
 
-      <li>
-        <router-link to="/ChatMessages" class="d-flex flex-row align-items-center textbox">
+      <li>       
+        <router-link to="/ChatMessages" class="d-flex flex-row align-items-center textbox d-block">
           <div class="userIcon me-spac-s">
             <img class="rounded-full" src="..\assets\images\chatRoom\dog.png" alt="icon" />
             <svg
@@ -200,7 +197,7 @@
       </li>
 
       <li>
-        <router-link to="/ChatMessages" class="d-flex flex-row align-items-center textbox">
+        <router-link to="/ChatMessages" class="d-flex flex-row align-items-center textbox d-block">
           <div class="userIcon me-spac-s">
             <img class="rounded-full" src="..\assets\images\chatRoom\jason.png" alt="icon" />
             <svg
@@ -236,7 +233,7 @@
       </li>
 
       <li>
-        <router-link to="/ChatMessages" class="d-flex flex-row align-items-center textbox">
+        <router-link to="/ChatMessages" class="d-flex flex-row align-items-center textbox d-block">
           <div class="userIcon me-spac-s">
             <img class="rounded-full" src="..\assets\images\pairing_img\m-pfp2.png" alt="icon" />
           </div>
@@ -259,7 +256,7 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/ChatMessages" class="d-flex flex-row align-items-center textbox">
+        <router-link to="/ChatMessages" class="d-flex flex-row align-items-center textbox d-block">
           <div class="userIcon me-spac-s">
             <img class="rounded-full" src="..\assets\images\chatRoom\ben.png" alt="icon" />
           </div>
@@ -301,8 +298,9 @@
 }
 .userIcon {
   position: relative;
-  width: 52px;
-  height: 52px;
+  min-width: 52px;
+  min-height: 52px;
+  max-width: 52px;
 }
 
 .pin {
@@ -315,11 +313,15 @@
   border-radius: 1000px;
   padding: 2.35px;
 }
+.userMessage{
+  width: 100%;
+  
+}
 .message {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  width: 230px;
+  width:180px;
 }
 .mt-20 {
   margin-top: -20px;
@@ -333,17 +335,20 @@
   border-bottom: 0.75px solid #e7e7e7;
   padding: 12px 16px;
 }
-
 .wh16 {
   width: 16px;
   height: 16px;
 }
-.w80{
+.w80 {
   width: 80px;
 }
-/* * {
-  outline: 1px solid pink;
-} */
+.w100{
+  width: 100%;
+}
+.h180 {
+  height: 180px;
+}
+
 </style>
 <script setup>
 import MainNavBar from '../components/MainNavBarOther.vue'
@@ -352,5 +357,4 @@ import MainNavBar from '../components/MainNavBarOther.vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 // Import Swiper styles
 import 'swiper/css'
-
 </script>

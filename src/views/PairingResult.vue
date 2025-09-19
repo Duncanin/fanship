@@ -2,10 +2,10 @@
   <div class="bg-primary-50">
     <bg_header />
     <div class="recap">
-      <div class="combine">
-        <img class="resultImg" src="../assets/images/pairing_img/other01.png" alt="anon" />
+      <div class="combine">      
+          <img class="resultImg" src="../assets/images/pairing_img/other01.png" alt="anon" />    
         <div>
-          <img class="pointerImg" src="../assets/images/pairing_img/point.svg" alt="pointer" />
+          <img class="pointerImg" src="../assets/images/pairing_img/point.png" alt="pointer" />
         </div>
       </div>
 
@@ -42,8 +42,13 @@
 }
 .resultImg:active {
   content: url('../assets/images/pairing_img/m-pfp2.png');
-  border-radius: 1000px; 
+  border-radius: 1000px;
 }
+.resultImg:visited {
+  content: url('../assets/images/pairing_img/m-pfp2.png');
+  border-radius: 1000px;
+}
+
 .combine {
   position: relative;
   max-width: 196px;
@@ -59,8 +64,7 @@
   height: 56px;
   background-color: #fb923c73;
   border-radius: 1000px;
-  padding: 6px;
-  transform: rotate(-25deg);  
+
 }
 
 span {

@@ -1,32 +1,32 @@
 <template>
-  <div class="container">
-    <div class="row bg-primary-50 px-spac-l pt-spac-5xl pb-spac-s mb-spac-xl">
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="d-flex align-items-center">
-          <button
-            type="button"
-            class="btn btn-none border-0 py-0 px-0 btn-modal-box-shadow"
-            data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop"
-            @click="$router.push({path:'/ChatRoom'})"
-          >
-            <img class="wh32" src="..\assets\images\chatRoom\back.png" alt="back" />
-          </button>
-          <img
-            class="rounded-full wh32 mx-spac-s"
-            src="..\assets\images\pairing_img\m-pfp2.png"
-            alt="icon"
-          />
-          <h6 class="fw-medium mb-0">陽光宅男</h6>
-        </div>
-
-        <div class="d-flex">
-          <img class="wh32" src="..\assets\images\chatRoom\search.png" alt="search" />
-          <img class="wh32 ms-spac-xs" src="..\assets\images\chatRoom\album.png" alt="file" />
-          <img class="wh32" src="..\assets\images\icon\more.svg" alt="more" />
-        </div>
+  <div class="bg-primary-50 px-spac-l pt-spac-5xl pb-spac-s mb-spac-xl">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <button
+          type="button"
+          class="btn btn-none border-0 py-0 px-0 btn-modal-box-shadow"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+          @click="$router.push({ path: '/ChatRoom' })"
+        >
+          <img class="wh32" src="..\assets\images\chatRoom\back.png" alt="back" />
+        </button>
+        <img
+          class="rounded-full wh32 mx-spac-s"
+          src="..\assets\images\pairing_img\m-pfp2.png"
+          alt="icon"
+        />
+        <h6 class="fw-medium mb-0">陽光宅男</h6>
+      </div>
+      <div class="d-flex">
+        <img class="wh32" src="..\assets\images\chatRoom\search.png" alt="search" />
+        <img class="wh32 ms-spac-xs" src="..\assets\images\chatRoom\album.png" alt="file" />
+        <img class="wh32" src="..\assets\images\icon\more.svg" alt="more" />
       </div>
     </div>
+  </div>
+
+  <div class="container">
     <div class="bg-primary-100 px-spac-xl py-spac-l rounded-m borderPrimary mb-spac-s">
       <p class="text-center fs-text-md">你們的共同點</p>
       <ul class="list-unstyled d-flex justify-content-center">
@@ -107,10 +107,15 @@
     </div>
 
     <div class="enter d-flex pt-spac-m pb-spac-4xl">
-      <img class="wh40" src="..\assets\images\chatRoom\plus.png" alt="add" />
-      <img class="wh40" src="..\assets\images\chatRoom\camera.png" alt="takepic" />
+      <img class="wh40 transform-xl" src="..\assets\images\chatRoom\plus.png" alt="add" />
+      <img class="wh40 transform-xl" src="..\assets\images\chatRoom\camera.png" alt="takepic" />
       <img class="wh40" src="..\assets\images\chatRoom\picicon.png" alt="openpic" />
-      <input type="text" class="form-control mb-spac-s mx-spac-xs" id="typeText" placeholder="輸入項目" />
+      <input
+        type="text"
+        class="form-control mb-spac-s mx-spac-xs"
+        id="typeText"
+        placeholder="輸入項目"
+      />
       <img class="wh40" src="..\assets\images\chatRoom\voice.png" alt="voice" />
     </div>
   </div>
@@ -125,9 +130,9 @@
   width: 36px;
   height: 36px;
 }
-.wh40{
-    width: 40px;
-    height: 40px;
+.wh40 {
+  width: 40px;
+  height: 40px;
 }
 .wh20 {
   width: 20px;
@@ -148,8 +153,14 @@
 .mbtextbox {
   margin-bottom: 207px;
 }
-</style>
+.transform-xl {
+  transform: scale(1.3);
+}
+/* 
+* {
+  outline: 1px solid pink;
+}*/
+</style> 
 
 <script setup>
-
 </script>
