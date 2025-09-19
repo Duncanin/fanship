@@ -1,8 +1,22 @@
 <script setup>
 import { useRouter } from 'vue-router'
+import { toRefs } from 'vue'
+const props = defineProps({
+  backPath: { type: String, default: '' },
+})
+const { backPath } = toRefs(props)
 const router = useRouter()
 const goBack = () => {
-  router.back()
+  if (backPath.value) {
+    router.push(backPath.value)
+    setTimeout(() => window.scrollTo(0, 0), 30)
+  } else if (window.history.length > 1) {
+    router.back()
+    setTimeout(() => window.scrollTo(0, 0), 30)
+  } else {
+    router.push('/') // fallback，首頁或預設
+    setTimeout(() => window.scrollTo(0, 0), 30)
+  }
 }
 </script>
 

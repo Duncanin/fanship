@@ -31,7 +31,7 @@ function onFileChange(event) {
 </script>
 
 <template>
-  <Header class="sticky-top" />
+  <Header class="sticky-top" :back-path="'/createProfile-3'" />
 
   <div class="container">
     <div class="py-spac-l d-flex flex-column gap-spac-m profile2">

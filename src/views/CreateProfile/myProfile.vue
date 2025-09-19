@@ -40,7 +40,7 @@ import MainNavBarOther from '@/components/MainNavBarOther.vue'
     </div>
   </div>
   <div class="primary-gradient">
-    <div class="container py-spac-xl">
+    <div class="container pt-spac-xl" style="padding-bottom: 122px">
       <div class="bg-white shadow-light rounded-xl px-spac-2xl py-spac-3xl">
         <div class="d-flex flex-column gap-spac-l">
           <div class="d-flex gap-spac-xl border-bottom border-primary border-opacity-10 pb-spac-l">
@@ -347,7 +347,11 @@ import MainNavBarOther from '@/components/MainNavBarOther.vue'
           </div>
         </div>
       </div>
-      <MainNavBarOther class="sticky-bottom mt-spac-xl" style="margin-bottom: 10px" />
+    </div>
+  </div>
+  <div class="fixed-bottom">
+    <div class="container pb-spac-xl">
+      <MainNavBarOther class="mt-spac-xl" style="margin-bottom: 10px" />
     </div>
   </div>
 </template>
