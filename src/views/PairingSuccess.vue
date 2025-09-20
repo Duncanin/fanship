@@ -23,7 +23,7 @@
 <style>
 .recapSuccess {
   padding-top: 76px;
-  padding-bottom: 76px;
+  padding-bottom: 0px;
   max-width: 327px;
   margin: 0 auto;
   margin-top: 36px;

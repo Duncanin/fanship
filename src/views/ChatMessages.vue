@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-primary-50 px-spac-l pt-spac-5xl pb-spac-s mb-spac-xl">
+  <div class="bg-primary-50 pt-spac-5xl pb-spac-s mb-spac-xl">
     <div class="container d-flex justify-content-between align-items-center">
       <div class="d-flex align-items-center">
         <button
