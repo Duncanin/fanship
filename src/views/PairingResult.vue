@@ -30,7 +30,7 @@
   background-color: #ffffff;
   text-align: center;
   font-weight: 700;
-  padding: 76px 24px;
+  padding: 26px 24px;
   border-radius: 32px;
   font-size: 20px;
 }
