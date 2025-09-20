@@ -102,7 +102,7 @@ function onSkip() {
 </script>
 
 <template>
-  <Header class="sticky-top" :back-path="'/createProfile'"/>
+  <Header class="sticky-top" :back-path="'/createProfile'" />
 
   <div class="container">
     <div class="py-spac-l d-flex flex-column gap-spac-m profile2">
@@ -143,7 +143,7 @@ function onSkip() {
           >
         </h3>
 
-        <div class="d-flex flex-wrap gap-3 mt-3">
+        <div class="d-flex flex-wrap gap-spac-s mt-3">
           <template v-for="opt in cuisineOptions" :key="opt">
             <input
               class="btn-check"
@@ -175,7 +175,7 @@ function onSkip() {
           >
         </h3>
 
-        <div class="d-flex flex-wrap gap-2 mt-3">
+        <div class="d-flex flex-wrap gap-spac-m mt-3">
           <template v-for="opt in personalFeature" :key="opt">
             <input
               class="btn-check"
@@ -207,7 +207,7 @@ function onSkip() {
           >
         </h3>
 
-        <div class="d-flex flex-wrap gap-2 mt-3">
+        <div class="d-flex flex-wrap gap-spac-m mt-3">
           <template v-for="opt in skills" :key="opt">
             <input
               class="btn-check"

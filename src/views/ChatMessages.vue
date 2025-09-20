@@ -106,7 +106,7 @@
       </p>
     </div>
 
-    <div class="enter d-flex pt-spac-m pb-spac-4xl">
+    <div class="enter d-flex pt-spac-m pb-spac-4xl sticky-bottom">
       <img class="wh40 transform-xl" src="..\assets\images\chatRoom\plus.png" alt="add" />
       <img class="wh40 transform-xl" src="..\assets\images\chatRoom\camera.png" alt="takepic" />
       <img class="wh40" src="..\assets\images\chatRoom\picicon.png" alt="openpic" />
@@ -156,11 +156,10 @@
 .transform-xl {
   transform: scale(1.3);
 }
-/* 
+/*
 * {
   outline: 1px solid pink;
 }*/
-</style> 
+</style>
 
-<script setup>
-</script>
+<script setup></script>

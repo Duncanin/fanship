@@ -226,7 +226,7 @@ function onSkip() {
             >最多選擇 {{ MAX }} 項</span
           >
         </h3>
-        <div class="d-flex flex-wrap gap-2 mt-3">
+        <div class="d-flex flex-wrap gap-spac-s mt-3">
           <template v-for="opt in lifeStyles" :key="opt">
             <input
               class="btn-check"
@@ -258,7 +258,7 @@ function onSkip() {
             >最多選擇 {{ MAX }} 項</span
           >
         </h3>
-        <div class="d-flex flex-wrap gap-2 mt-3">
+        <div class="d-flex flex-wrap gap-spac-s mt-3">
           <template v-for="opt in wearings" :key="opt">
             <input
               class="btn-check"
@@ -290,7 +290,7 @@ function onSkip() {
             >最多選擇 {{ MAX }} 項</span
           >
         </h3>
-        <div class="d-flex flex-wrap gap-2 mt-3">
+        <div class="d-flex flex-wrap gap-spac-s mt-3">
           <template v-for="opt in trips" :key="opt">
             <input
               class="btn-check"
@@ -322,7 +322,7 @@ function onSkip() {
             >最多選擇 {{ MAX }} 項</span
           >
         </h3>
-        <div class="d-flex flex-wrap gap-2 mt-3">
+        <div class="d-flex flex-wrap gap-spac-s mt-3">
           <template v-for="opt in pets" :key="opt">
             <input
               class="btn-check"
@@ -354,7 +354,7 @@ function onSkip() {
             >最多選擇 {{ MAX }} 項</span
           >
         </h3>
-        <div class="d-flex flex-wrap gap-2 mt-3">
+        <div class="d-flex flex-wrap gap-spac-s mt-3">
           <template v-for="opt in movies" :key="opt">
             <input
               class="btn-check"
@@ -386,7 +386,7 @@ function onSkip() {
             >最多選擇 {{ MAX }} 項</span
           >
         </h3>
-        <div class="d-flex flex-wrap gap-2 mt-3">
+        <div class="d-flex flex-wrap gap-spac-s mt-3">
           <template v-for="opt in exhibitions" :key="opt">
             <input
               class="btn-check"
@@ -418,7 +418,7 @@ function onSkip() {
             >最多選擇 {{ MAX }} 項</span
           >
         </h3>
-        <div class="d-flex flex-wrap gap-2 mt-3">
+        <div class="d-flex flex-wrap gap-spac-s mt-3">
           <template v-for="opt in anime" :key="opt">
             <input
               class="btn-check"
@@ -450,7 +450,7 @@ function onSkip() {
             >最多選擇 {{ MAX }} 項</span
           >
         </h3>
-        <div class="d-flex flex-wrap gap-2 mt-3">
+        <div class="d-flex flex-wrap gap-spac-s mt-3">
           <template v-for="opt in languages" :key="opt">
             <input
               class="btn-check"
@@ -494,3 +494,9 @@ function onSkip() {
     </div>
   </div>
 </template>
+
+<style scoped>
+.btn-tag {
+  padding: 5px 9px !important;
+}
+</style>
