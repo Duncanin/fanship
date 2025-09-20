@@ -8,7 +8,7 @@
           <p class="text-secondary-900 lh-h6 text-center mb-spac-2xl">
             彼此都會以匿名頭像進行遊戲，<br>放輕鬆、自在做自己！
           </p>
-          <div class="row gx-3 gy-3 avatars-spacer">
+          <div class="row g-3 avatars-spacer">
             <div class="col-4" 
             v-for="(avatar, index) in avatars" :key="index">
               <div
@@ -107,9 +107,8 @@ function confirmSelection() {
 }
 .avatars-spacer {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
   justify-content: center;
+  align-items: center;
 }
 .avatars-spacer > div {
   flex: 0 0 calc(33.333% - 16px);

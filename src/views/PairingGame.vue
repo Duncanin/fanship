@@ -1,7 +1,7 @@
 <template>
-  <main class="bg-primary-50">
+  <main class="bg-primary-50 min-vh-100 d-flex flex-column">
     <PairingMenu />
-    <div class="container mt-spac-s">
+    <div class="container mt-spac-s flex-grow-1">
       <!-- 進度條 -->
       <div class="d-flex justify-content-start align-items-center mb-spac-m">
         <div class="progress-bar rounded-full me-spac-s flex-grow-1">
@@ -72,8 +72,8 @@
           </div>
         </div>
       </transition>
-
-      <DefaultReply2 :key="conversationKey"/>
+  
+      <DefaultReply2 :key="conversationKey" class="border-top"/>
     </div>
   </main>
   

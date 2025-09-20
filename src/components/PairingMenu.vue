@@ -13,8 +13,8 @@
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content d-flex justify-content-center align-items-center bg-secondary-0 shadow-light px-spac-2xl py-spac-2xl rounded-m">
-          <h1 class="modal-title fw-bold fs-4 lh-h4 mb-spac-m text-secondary-900" id="staticBackdropLabel ">遊戲還沒結束喔!</h1>
-          <p class="mb-spac-xl text-secondary-700 fs-text-lg border-0 text-center py-0">離開可能會和飯友擦肩而過，<br>會，確定要結束嗎？</p>
+          <h1 class="modal-title fw-bold fs-4 lh-h4 mb-spac-m text-secondary-900" id="staticBackdropLabel ">要回首頁了嗎？</h1>
+          <p class="mb-spac-xl text-secondary-700 fs-text-lg border-0 text-center py-0">返回首頁可能會錯過和飯友配對的<br>機會，確定要返回嗎？</p>
           <div>
             <button type="button" class="btn btn-secondary-0 shadow-light rounded-full text-secondary-700 me-spac-m fs-text-lg fw-bold modal-btn" data-bs-dismiss="modal">
               取消

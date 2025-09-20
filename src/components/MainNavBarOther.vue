@@ -1,8 +1,8 @@
 <template>
   <div class="main-nav_bar nav-bar-img">
-    <ul class="d-flex justify-content-between align-items-center py-spac-s px-spac-5xl">
+    <ul class="d-flex justify-content-center align-items-center py-spac-s px-spac-5xl">
       <li class="nav_bar_item"
-        :class="{ active: activeIndex === 0, hideLabel: activeIndex === 2 }"
+        :class="{ active: activeIndex === 0, hideLabel: activeIndex === 2 || activeIndex === 1}"
         @click="setActive(0)" >
         <div class="nav_icon_wrapper">
           <div class="icon icon-chat">
@@ -17,7 +17,7 @@
         </div>
       </li>
       <!-- 首頁 -->
-      <li class="nav_bar_item milli-w-cus mx-spac-4xl home-item"
+      <li class="nav_bar_item milli-w-cus mx-spac-5xl home-item"
       :class="{ active: activeIndex === 1}"
         @click="setActive(1)" >
         <!-- 固定凹槽 -->
@@ -31,7 +31,7 @@
         
       </li>
       <li class="nav_bar_item"
-        :class="{ active: activeIndex === 2, hideLabel: activeIndex === 0 }"
+        :class="{ active: activeIndex === 2, hideLabel: activeIndex === 0 || activeIndex === 1}"
         @click="setActive(2)">
         <div class="nav_icon_wrapper">
           <div class="icon">
@@ -75,7 +75,7 @@ watch(
       activeIndex.value = 0
     } else if (newPath === '/pairing-index') {
       activeIndex.value = 1
-    } else if (newPath === '/myProfile') {
+    } else if (newPath === '/myProfile' || newPath === '/editProfile') {
       activeIndex.value = 2
     } else {
       activeIndex.value = -1
@@ -90,7 +90,7 @@ watch(
   background-image: url("@/assets/images/navigationBtn/Subtract.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  object-fit: cover;
 }
 .main-nav_bar {
   margin: 0 auto;
